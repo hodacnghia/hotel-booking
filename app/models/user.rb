@@ -13,4 +13,7 @@ class User < ApplicationRecord
   def admin?
     self.role.name == "Admin"
   end
+  def regular?
+    self.role.name == "Regular"
+  end
 end

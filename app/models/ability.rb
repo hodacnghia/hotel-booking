@@ -32,8 +32,19 @@ class Ability
     def initialize(user)
       if user.try(:admin?)
         can :manage, :all
+      elsif user.try(:regular?)
+        can :read, :all
+        can :create, Hotel
+        can :update, Hotel do |hotel|
+          hotel.try(:user) == user
+        end
+        can :destroy, Hotel do |hotel|
+          hotel.try(:user) == user
+        end
       else
         can :read, :all
+      
+
       end
     end
   end
