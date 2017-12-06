@@ -15,9 +15,10 @@
 
 	<div class="header-limiter">
 
-		<h1><a href="#"><span>logo</span></a></h1>
+	<%= image_tag("home.png", width: 240, height: 100 ) %>
 
 		<nav>
+			
 			<a href="#">Home</a>
 			<a href="#" class="selected">Blog</a>
 			<a href="#">Pricing</a>
@@ -25,10 +26,13 @@
 
 		<ul>
         <% if user_signed_in? %>
-           <%= link_to "Logout" , destroy_user_session_path, method: :delete%>
-        <%else%>
-            <%= link_to "Login" , new_user_session_path%>
-      <%= link_to "Sign up" , new_user_registration_path%>
+		   <%= link_to "Logout" , destroy_user_session_path, method: :delete , class:"action-button shadow animate red"%>
+		   
+		<%else%>
+			
+			<%= link_to "Login" , new_user_session_path , class: "action-button shadow animate blue"%>
+			
+      <%= link_to "Sign up" , new_user_registration_path, class:"action-button shadow animate green"%>
       <%end%>
 		</ul>
 
