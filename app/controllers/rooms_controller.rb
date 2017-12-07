@@ -42,9 +42,11 @@ class RoomsController < ApplicationController
   # PATCH/PUT /rooms/1
   # PATCH/PUT /rooms/1.json
   def update
+    @hotel = Hotel.find(params[:hotel_id])
+    @room = @hotel.rooms.find(params[:id])
     respond_to do |format|
       if @room.update(room_params)
-        format.html { redirect_to @room, notice: 'Room was successfully updated.' }
+        format.html { redirect_to hotel_path(@hotel)}
         format.json { render :show, status: :ok, location: @room }
       else
         format.html { render :edit }
