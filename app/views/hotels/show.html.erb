@@ -12,6 +12,12 @@
   <strong>User:</strong>
   <%= @hotel.user.name %>
 </p>
+<p>
+  <strong>Image url:</strong>
+            <%@hotel.picture.each do |image|%>   
+          <%=  image_tag image.url  %>  
+          <% end%>
+</p>
 
 <h2>Rooms</h2>
 <%= render @hotel.rooms %>

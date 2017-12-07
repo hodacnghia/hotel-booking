@@ -33,6 +33,11 @@ gem 'devise'
 gem 'cancancan'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'ratyrate'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
