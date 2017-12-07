@@ -1,0 +1,17 @@
+<%= form_with(model: [ @hotel, @hotel.rooms.build]) do |form| %>
+  <p>
+    <%= form.label :type_id %>
+    <%= collection_select(:room, :type_id, Type.all, :id, :name, {prompt: true}) %>
+  </p>
+  <p>
+    <%= form.label :bed %>
+    <%= form.number_field :bed, id: :room_bed %>
+  </p>
+  <p>
+    <%= form.label :status %>
+    <%= form.check_box :status, id: :room_status %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

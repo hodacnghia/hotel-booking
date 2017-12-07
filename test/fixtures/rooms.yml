@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: one
+  hotel: one
+  bed: 1
+  status: false
+
+two:
+  type: two
+  hotel: two
+  bed: 1
+  status: false
