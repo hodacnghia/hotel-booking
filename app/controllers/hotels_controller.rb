@@ -1,10 +1,10 @@
 class HotelsController < ApplicationController
   load_and_authorize_resource
-  
+  before_action :authenticate_user!, except: [:index, :show]
   # GET /hotels
   # GET /hotels.json
   def index
-    @hotels = Hotel.all
+    @hotels = Hotel.all.paginate(page: params[:page], per_page: 2)
   end
 
   # GET /hotels/1
@@ -67,6 +67,6 @@ class HotelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hotel_params
-      params.require(:hotel).permit(:name, :description, :user_id)
+      params.require(:hotel).permit(:name,:city_id, :description, :user_id,{picture: []})
     end
 end

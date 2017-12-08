@@ -8,19 +8,39 @@
       <th>Name</th>
       <th>Description</th>
       <th>User</th>
+      <th>Picture</th>
+      <th>rate</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
+    <%= will_paginate @hotels %>
     <% @hotels.each do |hotel| %>
       <tr>
         <td><%= hotel.name %></td>
         <td><%= hotel.description %></td>
         <td><%= hotel.user.name %></td>
+                <td>
+          <%hotel.picture.each do |image|%>
+          <%=  image_tag image.url %>
+          <% end%>
+        </td>
+        <td>
+              Rate: <%= rating_for hotel, "rate" , cancel_place: 'right' ,imdb_avg: true ,data: { turbolinks: false } %>
+        </td>
         <td><%= link_to 'Show', hotel %></td>
-        <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
-        <td><%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <% if can? :update, hotel %>
+            <%= link_to 'Edit', edit_hotel_path(hotel) %>
+          <% end %>
+        </td>
+
+        <td>
+          <% if can? :destroy, hotel %>
+            <%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

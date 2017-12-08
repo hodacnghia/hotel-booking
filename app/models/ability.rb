@@ -35,6 +35,7 @@ class Ability
       elsif user.try(:regular?)
         can :read, :all
         can :create, Hotel
+        can :read, City
         can :update, Hotel do |hotel|
           hotel.try(:user) == user
         end
@@ -42,7 +43,8 @@ class Ability
           hotel.try(:user) == user
         end
       else
-        can :read, :all
+        can :read, Hotel
+        can :read, City
       
 
       end
