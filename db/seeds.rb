@@ -18,3 +18,17 @@ t1 = Type.create({name: "Standard", discription: "Minimal equipment, small area,
 t2 = Type.create({name: "Superior", discription: "Higher quality than Standard with larger area, equipped with many facilities, nice view. "})
 t3 = Type.create({name: "Deduce", discription: "On higher floor with better quality than Superior room, beautiful view."})
 t4 = Type.create({name: "Suite", discription: "Suites are located on high floors, equipped with high-end equipment and special services attached"})
+
+
+c1 = City.create({name: "Hồ Chí Minh", description: "thành phố hiện đại năng động"})
+c2 = City.create({name: "Hà Nội", description: "thành phố hiện đại năng động"})
+c3 = City.create({name: "Huế", description: "thành phố hiện đại năng động"})
+c4 = City.create({name: "Đà Lạt", description: "thành phố hiện đại năng động"})
+c5 = City.create({name: "Nha Trang", description: "thành phố hiện đại năng động"})
+c6 = City.create({name: "Đà Nẵng", description: "thành phố hiện đại năng động"})
+c7 = City.create({name: "Hải Phòng", description: "thành phố hiện đại năng động"})
+c8 = City.create({name: "Vũng Tàu", description: "thành phố hiện đại năng động"})
+c9 = City.create({name: "Tiền Giang", description: "thành phố hiện đại năng động"})
+c10 = City.create({name: "Tây Ninh", description: "thành phố hiện đại năng động"})
+c11 = City.create({name: "Quy Nhơn", description: "thành phố hiện đại năng động"})
+c11 = City.create({name: "Bình Định", description: "thành phố hiện đại năng động"})

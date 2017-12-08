@@ -10,6 +10,8 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require bootstrap-theme.min
+ *= require bootstrap.min
  *= require_tree .
  *= require_self
  */
@@ -24,4 +26,12 @@ body {
 	background-size: auto;
 	margin:0;
 	padding:0;
+}
+a:hover{
+	text-decoration: none;
+	color: #aa61db;
+}
+
+nav li a {
+	opacity: 1;
 }

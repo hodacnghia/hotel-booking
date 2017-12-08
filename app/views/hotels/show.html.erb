@@ -12,45 +12,18 @@
   <strong>User:</strong>
   <%= @hotel.user.name %>
 </p>
+<p>
+  <strong>Image url:</strong>
+            <%@hotel.picture.each do |image|%>   
+          <%=  image_tag image.url  %>  
+          <% end%>
+</p>
 
 <h2>Rooms</h2>
-<% @hotel.rooms.each do |room| %>
-  <p>
-    <strong>Type:</strong>
-    <%= room.type.name %>
-  </p>
-  <p>
-    <strong>Bed:</strong>
-    <%= room.bed %>
-  </p>
-  <p>
-    <strong>Status:</strong>
-    <% if room.status == true%>
-      Phòng Đã Đặt
-    <%else%>
-      Phòng Trống
-  <%  end %>
-  </p>
-<% end %>
+<%= render @hotel.rooms %>
 
 <h2>Add a room</h2>
-<%= form_with(model: [ @hotel, @hotel.rooms.build], local: true) do |form| %>
-  <p>
-    <%= form.label :type_id %>
-    <%= collection_select(:room, :type_id, Type.all, :id, :name, {prompt: true}) %>
-  </p>
-  <p>
-    <%= form.label :bed %>
-    <%= form.number_field :bed, id: :room_bed %>
-  </p>
-  <p>
-    <%= form.label :status %>
-    <%= form.check_box :status, id: :room_status %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%= render 'rooms/form' %>
 
 <%= link_to 'Edit', edit_hotel_path(@hotel) %> |
 <%= link_to 'Back', hotels_path %>

@@ -1,7 +1,15 @@
 class Hotel < ApplicationRecord
   belongs_to :user
-  has_many :rooms
-  include PgSearch
+  has_many :rooms, dependent: :destroy
+  mount_uploaders :picture, PictureUploader
+  validate  :picture_size
+  ratyrate_rateable 'rate'
+  private
   
-  pg_search_scope :search_content_for, against: :content, using: { tsearch: { any_word: true } }
+      # Validates the size of an uploaded picture.
+      def picture_size
+        if picture.size > 5.megabytes
+          errors.add(:picture, "should be less than 5MB")
+        end
+      end
 end
