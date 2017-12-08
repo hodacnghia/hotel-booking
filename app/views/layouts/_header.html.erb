@@ -1,47 +1,35 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-
-
-
-
-
-</head>
-
-<body>
-
-<header class="header-login-signup">
-
-	<div class="header-limiter">
-
-		<h1><a href="#"><span>logo</span></a></h1>
-
+<link rel="stylesheet" type="text/scss" href="custom.scss">
+<link href="http://allfont.net/allfont.css?fonts=p22-corinthia" rel="stylesheet" type="text/css" />
+<section class="hero">
+<header>
+	<div class="wrapper">
+		<a href="#"><img src="img/logo.png" class="logo" alt="" titl=""/></a>
+		<a href="#" class="hamburger"></a>
 		<nav>
-			<a href="#">Home</a>
-			<a href="#" class="selected">Blog</a>
-			<a href="#">Pricing</a>
+			<ul>
+				<li><a href="#">Buy</a></li>
+				<li><a href="#">Rent</a></li>
+				<li><a href="#">Sell</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+			<a href="#" class="login_btn">Login</a>
 		</nav>
-
-		<ul>
-        <% if user_signed_in? %>
-           <%= link_to "Logout" , destroy_user_session_path, method: :delete%>
-        <%else%>
-            <%= link_to "Login" , new_user_session_path%>
-      <%= link_to "Sign up" , new_user_registration_path%>
-      <%end%>
-		</ul>
-
 	</div>
+</header><!--  end header section  -->
 
-</header>
-
-
-
-
-
-
-
-</body>
-
-</html>
+	<section class="caption">
+		<h2 class="caption" s >Find You Dream Hotel</h2>
+		
+	</section>
+</section><!--  end hero section  -->
+<section class="search">
+<div class="wrapper">
+	<form action="#" method="post">
+		<input type="text" id="search" name="search" placeholder="What are you looking for?"  autocomplete="off"/>
+		<input type="submit" id="submit_search" name="submit_search"/>
+	</form>
+	<a href="#" class="advanced_search_icon" id="advanced_search_btn"></a>
+</div>
+</section>

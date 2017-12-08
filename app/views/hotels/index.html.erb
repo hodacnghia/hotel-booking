@@ -1,31 +1,151 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Hotels</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @hotels.each do |hotel| %>
-      <tr>
-        <td><%= hotel.name %></td>
-        <td><%= hotel.description %></td>
-        <td><%= hotel.user.name %></td>
-        <td><%= link_to 'Show', hotel %></td>
-        <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
-        <td><%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+# <h1>Hotels</h1>
 
-<br>
+# <table>
+#   <thead>
+#     <tr>
+#       <th>Name</th>
+#       <th>Description</th>
+#       <th>User</th>
+#       <th colspan="3"></th>
+#     </tr>
+#   </thead>
 
+#   <tbody>
+#     <% @hotels.each do |hotel| %>
+#       <tr>
+#         <td><%= hotel.name %></td>
+#         <td><%= hotel.description %></td>
+#         <td><%= hotel.user.name %></td>
+#         <td><%= link_to 'Show', hotel %></td>
+#         <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
+#         <td><%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+#       </tr>
+#     <% end %>
+#   </tbody>
+# </table>
+
+# <br>
+
+
+<section class="listings">
+<div class="wrapper">
+  <ul class="properties_list">
+    <li>
+      <a href="#">
+        <img src="property_1.jpg" alt="" title="" class="property_img"/>
+      </a>
+      <span class="price">$2500</span>
+      <div class="property_details">
+        <h1>
+          <a href="#">Fuisque dictum tortor at purus libero</a>
+        </h1>
+        <h2>2 kitchens, 2 bed, 2 bath... <span class="property_size">(288ftsq)</span></h2>
+      </div>
+    </li>
+    <li>
+      <a href="#">
+        <%=img src="property_2.jpg" alt="" title="" class="property_img"/>
+      </a>
+      <span class="price">$1000</span>
+      <div class="property_details">
+        <h1>
+          <a href="#">Fuisque dictum tortor at purus libero</a>
+        </h1>
+        <h2>2 kitchens, 2 bed, 2 bath... <span class="property_size">(288ftsq)</span></h2>
+      </div>
+    </li>
+    <li>
+      <a href="#">
+        <img src="property_3.jpg" alt="" title="" class="property_img"/>
+      </a>
+      <span class="price">$500</span>
+      <div class="property_details">
+        <h1>
+          <a href="#">Fuisque dictum tortor at purus libero</a>
+        </h1>
+        <h2>2 kitchens, 2 bed, 2 bath... <span class="property_size">(288ftsq)</span></h2>
+      </div>
+    </li>
+    <li>
+      <a href="#">
+        <img src="property_1.jpg" alt="" title="" class="property_img"/>
+      </a>
+      <span class="price">$2500</span>
+      <div class="property_details">
+        <h1>
+          <a href="#">Fuisque dictum tortor at purus libero</a>
+        </h1>
+        <h2>2 kitchens, 2 bed, 2 bath... <span class="property_size">(288ftsq)</span></h2>
+      </div>
+    </li>
+    <li>
+      <a href="#">
+        <img src="property_2.jpg" alt="" title="" class="property_img"/>
+      </a>
+      <span class="price">$1000</span>
+      <div class="property_details">
+        <h1>
+          <a href="#">Fuisque dictum tortor at purus libero</a>
+        </h1>
+        <h2>2 kitchens, 2 bed, 2 bath... <span class="property_size">(288ftsq)</span></h2>
+      </div>
+    </li>
+    <li>
+      <a href="#">
+        <img src="property_3.jpg" alt="" title="" class="property_img"/>
+      </a>
+      <span class="price">$500</span>
+      <div class="property_details">
+        <h1>
+          <a href="#">Fuisque dictum tortor at purus libero</a>
+        </h1>
+        <h2>2 kitchens, 2 bed, 2 bath... <span class="property_size">(288ftsq)</span></h2>
+      </div>
+    </li>
+    <li>
+      <a href="#">
+        <img src="property_1.jpg" alt="" title="" class="property_img"/>
+      </a>
+      <span class="price">$2500</span>
+      <div class="property_details">
+        <h1>
+          <a href="#">Fuisque dictum tortor at purus libero</a>
+        </h1>
+        <h2>2 kitchens, 2 bed, 2 bath... <span class="property_size">(288ftsq)</span></h2>
+      </div>
+    </li>
+    <li>
+      <a href="#">
+        <img src="property_2.jpg" alt="" title="" class="property_img"/>
+      </a>
+      <span class="price">$1000</span>
+      <div class="property_details">
+        <h1>
+          <a href="#">Fuisque dictum tortor at purus libero</a>
+        </h1>
+        <h2>2 kitchens, 2 bed, 2 bath... <span class="property_size">(288ftsq)</span></h2>
+      </div>
+    </li>
+    <li>
+      <a href="#">
+        <img src="property_3.jpg" alt="" title="" class="property_img"/>
+      </a>
+      <span class="price">$500</span>
+      <div class="property_details">
+        <h1>
+          <a href="#">Fuisque dictum tortor at purus libero</a>
+        </h1>
+        <h2>2 kitchens, 2 bed, 2 bath... <span class="property_size">(288ftsq)</span></h2>
+      </div>
+    </li>
+  </ul>
+  <div class="more_listing">
+    <a href="#" class="more_listing_btn">View More Listings</a>
+  </div>
+</div>
+</section>	<!--  end listing section  -->
 <%= link_to 'New Hotel', new_hotel_path %>

@@ -17,6 +17,11 @@ class HotelsController < ApplicationController
 
   end
 
+  #SEARCH
+  def search 
+    @hotels = Hotel.search_content_for(params[:query])
+  end
+
   # GET /hotels/1/edit
   def edit
   end
