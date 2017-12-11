@@ -1,6 +1,20 @@
 <h1>Editing Room</h1>
 
-<%= render 'form', room: @room %>
-
-<%= link_to 'Show', @room %> |
-<%= link_to 'Back', rooms_path %>
+<%= form_for :room, url: hotel_room_path,method: :PATCH do |form| %>
+  <p>
+    <%= form.label :type_id %>
+    <%= collection_select(:room, :type_id, Type.all, :id, :name, {prompt: true}) %>
+  </p>
+  <p>
+    <%= form.label :bed %>
+    <%= form.number_field :bed, id: :room_bed %>
+  </p>
+  <p>
+    <%= form.label :status %>
+    <%= form.check_box :status, id: :room_status %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<%= link_to "Back", :back %>

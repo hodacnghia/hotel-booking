@@ -1,15 +1,27 @@
 <p>
-    <strong>Type:</strong>
-    <%= room.type %>
+  <strong>Type:</strong>
+  <%= room.type.name %>
 </p>
 <p>
-    <strong>Bed:</strong>
-    <%= room.bed %>
+  <strong>Bed:</strong>
+  <%= room.bed %>
 </p>
 <p>
-    <strong>Status:</strong>
-    <%= room.status %>
+  <strong>Status:</strong>
+  <% if room.status == true%>
+    Phòng Đã Đặt
+  <%else%>
+    Phòng Trống
+<%  end %>
 </p>
-<p>
-    <link_to 'Destroy Comment',
-</p>
+
+<% if can? :update, @hotel %>
+  <p>
+      <%= link_to 'Destroy Room', [room.hotel, room],
+                method: :delete,
+                data: { confirm: 'Are you sure ?'} %>
+  </p>
+  <p>
+    <%= link_to 'Edit Room', edit_hotel_room_path(room.hotel_id, room) %>
+  </p>
+<% end %>

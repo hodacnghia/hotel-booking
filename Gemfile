@@ -34,6 +34,14 @@ gem 'devise'
 gem 'cancancan'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'ratyrate'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+gem 'textacular'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
