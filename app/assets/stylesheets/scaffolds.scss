@@ -51,9 +51,8 @@ div {
 }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+  // padding: 1px;
+  // background-color: red;
 }
 
 #error_explanation {
@@ -64,21 +63,27 @@ div {
   background-color: #f0f0f0;
 
   h2 {
+    font-size: 16px;
     text-align: left;
     font-weight: bold;
-    padding: 5px 5px 5px 15px;
+    padding: 10px 10px 10px 15px;
     font-size: 12px;
-    margin: -7px -7px 0;
-    background-color: #c00;
-    color: #fff;
+    margin: 1px 1px 10px 1px;
+    background-color: #ffbcbc;
+    color: #9c0303;
+    border-radius: 2px;
   }
 
   ul li {
     font-size: 12px;
     list-style: square;
+    color: red
   }
 }
 
 label {
   display: block;
+}
+.container {
+  float: inherit;
 }
