@@ -4,7 +4,11 @@ class HotelsController < ApplicationController
   # GET /hotels
   # GET /hotels.json
   def index
-    @hotels = Hotel.all
+    if params[:term]
+      @hotels = Hotel.whose_name_starts_with(params[:term])
+    else
+      @hotels = Hotel.all
+    end
   end
 
   # GET /hotels/1

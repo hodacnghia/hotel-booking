@@ -16,17 +16,3 @@ $(document).ready(function () {
         }
     });
 });
-
-$(document).ready(function () {
-    size_li = $(".properties_list li").size();
-    x=3;
-    $('.properties_list:lt('+x+')').show();
-    $('.lmore_listing_btn').click(function () {
-        x= (x+3 <= size_li) ? x+3 : size_li;
-        $('.properties_list li:lt('+x+')').show();
-        if(x == size_li){
-            $('.more_listing_btn').hide();
-        }
-    });
-    
-});

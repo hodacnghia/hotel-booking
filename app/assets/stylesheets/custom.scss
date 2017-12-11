@@ -198,6 +198,16 @@ select {
     font-family: "albas";
     src: url("albas.ttf");
 }
+@font-face {
+    font-family: 'iconic';
+    src: url('webfonts/iconic.eot');
+    src: url('webfonts/iconic.eot?#iefix') format('embedded-opentype'),
+         url('webfonts/iconic.svg#iconic') format('svg'),
+         url('webfonts/iconic.woff') format('woff'),
+         url('webfonts/iconic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
     background: #fff;

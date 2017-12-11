@@ -57,8 +57,11 @@
 		<input type="text" id="search" name="search" placeholder="What are you looking for?"  autocomplete="off"/>
 		<input type="submit" id="submit_search" name="submit_search"/>
 	</form>
-	<a href="#" class="advanced_search_icon" id="advanced_search_btn"></a>
+	<%= form_tag hotels_path, method: :get do %>
+		<%= text_field_tag "term", params[:term], placeholder: "" %>
+		<%= submit_tag "Search!" %>
+	  <% end%>
 </div>
-<%= button_to "New Hotel", new_hotel_path, :class => "new-hotel-btn", :method => :get %>
+
 
 </section>
