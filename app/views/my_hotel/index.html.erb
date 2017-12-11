@@ -1,7 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Hotels</h1>
-
+<% @hotels.each do |hotel| %>
 <table>
   <thead>
     <tr>
@@ -15,7 +12,6 @@
   </thead>
 
   <tbody>
-    <%= will_paginate @hotels %>
     <% @hotels.each do |hotel| %>
       <tr>
         <td><%= hotel.name %></td>
@@ -45,7 +41,4 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Hotel', new_hotel_path %>
+<% end %>

@@ -15,10 +15,16 @@
 <%  end %>
 </p>
 <p>
-    <%= link_to 'Destroy Room', [room.hotel, room],
-              method: :delete,
-              data: { confirm: 'Are you sure ?'} %>
+  <!-- <%=link_to 'Order' ,new_hotel_room_order_path(room.hotel_id, room) %> -->
+  <%=button_to 'Order', new_order_path, method: :get%>
 </p>
-<p>
-  <%= link_to 'Edit Room', edit_hotel_room_path(room.hotel_id, room) %>
-</p>
+<% if can? :update, @hotel %>
+  <p>
+      <%= link_to 'Destroy Room', [room.hotel, room],
+                method: :delete,
+                data: { confirm: 'Are you sure ?'} %>
+  </p>
+  <p>
+    <%= link_to 'Edit Room', edit_hotel_room_path(room.hotel_id, room) %>
+  </p>
+<% end %>

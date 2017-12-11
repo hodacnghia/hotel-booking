@@ -1,10 +1,10 @@
 class HotelsController < ApplicationController
   load_and_authorize_resource
-  before_action :authenticate_user!, except: [:index, :show] 
+  before_action :authenticate_user!, except: [:index, :show]
   # GET /hotels
   # GET /hotels.json
   def index
-    @hotels = Hotel.all
+    @hotels = Hotel.all.paginate(page: params[:page], per_page: 2)
   end
 
   # GET /hotels/1
