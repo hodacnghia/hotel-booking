@@ -56,26 +56,24 @@ div {
 }
 
 #error_explanation {
-  width: 450px;
-  border: 2px solid red;
+  width: 580px;
   padding: 7px 7px 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+  margin: 0 auto;
+  background-color: #ffffff;
 
   h2 {
     font-size: 16px;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
-    padding: 10px 10px 10px 15px;
-    font-size: 12px;
-    margin: 1px 1px 10px 1px;
+    padding: 20px 20px 20px 15px;
+    margin: 1px 1px 20px 1px;
     background-color: #ffbcbc;
     color: #9c0303;
     border-radius: 2px;
   }
 
   ul li {
-    font-size: 12px;
+    font-size: 16px;
     list-style: square;
     color: red
   }
@@ -83,7 +81,4 @@ div {
 
 label {
   display: block;
-}
-.container {
-  float: inherit;
 }
