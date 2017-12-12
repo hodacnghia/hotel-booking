@@ -51,8 +51,6 @@ end
     end
     user
 end
-<<<<<<< HEAD
-=======
 
 geocoded_by :full_address # full_address is a method which take some model's attributes to get a formatted address for example
 
@@ -64,5 +62,4 @@ geocoded_by :full_address # full_address is a method which take some model's att
     "#{address}, #{zipcode}, #{city}, #{country}"
   end
 
->>>>>>> csslayout
 end

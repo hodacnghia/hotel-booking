@@ -42,12 +42,9 @@ gem 'mini_magick'
 gem 'ratyrate'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
-<<<<<<< HEAD
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'textacular'
-=======
->>>>>>> csslayout
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
