@@ -48,8 +48,12 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+<<<<<<< HEAD
     bootstrap-will_paginate (1.0.0)
       will_paginate
+=======
+    bootstrap_jt (0.1.0)
+>>>>>>> csslayout
     builder (3.2.3)
     byebug (9.1.0)
     cancancan (2.1.2)
@@ -86,8 +90,14 @@ GEM
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
+    geocoder (1.4.5)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+<<<<<<< HEAD
+=======
+    gmap_coordinates_picker (0.1.0)
+      rails (>= 3.1.0)
+>>>>>>> csslayout
     hashie (3.5.6)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
@@ -242,13 +252,19 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
+<<<<<<< HEAD
   bootstrap-will_paginate
+=======
+  bootstrap_jt
+>>>>>>> csslayout
   byebug
   cancancan
   capybara (~> 2.13)
   carrierwave
   coffee-rails (~> 4.2)
   devise
+  geocoder
+  gmap_coordinates_picker
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)

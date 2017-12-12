@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<<<<<<< HEAD
 <h1>Hotels</h1>
 
 <table>
@@ -49,3 +50,45 @@
 <br>
 <%= will_paginate @hotels %>
 <%= link_to 'New Hotel', new_hotel_path %>
+=======
+  <section class="listings">
+  <div class="wrapper">
+  
+    <ul class="properties_list">
+    
+        <% @hotels.each do |hotel| %>
+        <tr>
+        <td>
+        </td>
+        <li>
+        <a href="#">
+          <%hotel.picture.each do |image|%>   
+          <%=  image_tag image.url %>  
+          <% end%>
+        </a>
+        <span class="price">$2500</span>
+        <div class="property_details">
+          <h1>
+          <td><%= hotel.name %></td>
+          <td><%= rating_for hotel, "rate" , cancel_place: 'right' ,imdb_avg: true ,data: { turbolinks: false } %></td>
+          </h1>
+          <h2><td><%= hotel.description %></td> <span class="property_size"></span></h2>
+          <td><%= hotel.user.name %></td>
+
+          <td><%= link_to 'Show', hotel %></td>
+          
+
+        </div>
+      </li>
+      
+        
+      </tr>
+    <% end %>
+</ul>
+<a href="#" class="more_listing_btn">View More Listings</a>
+</div>
+</section>
+<br>
+
+
+>>>>>>> csslayout

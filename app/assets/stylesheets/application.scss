@@ -10,6 +10,8 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require bootstrap-theme.min
+ *= require bootstrap.min
  *= require_tree .
  *= require_self
  */
@@ -19,9 +21,3 @@
 
 /* For the headers to look good, be sure to reset the margin and padding of the body */
 
-body {
-	background-image: url();
-	background-size: auto;
-	margin:0;
-	padding:0;
-}

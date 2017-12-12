@@ -1,10 +1,22 @@
 class HotelsController < ApplicationController
   load_and_authorize_resource
+<<<<<<< HEAD
   before_action :authenticate_user!, except: [:index, :show]
   # GET /hotels
   # GET /hotels.json
   def index
     @hotels = Hotel.all.paginate(page: params[:page], per_page: 2)
+=======
+  before_action :authenticate_user!, except: [:index, :show] 
+  # GET /hotels
+  # GET /hotels.json
+  def index
+    if params[:term]
+      @hotels = Hotel.whose_name_starts_with  (params[:term])
+    else
+      @hotels = Hotel.all
+    end
+>>>>>>> csslayout
   end
 
   # GET /hotels/1

@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
 
   get 'my_hotel/index'
 
+=======
+  
+  resources :locations
+>>>>>>> csslayout
   post '/rate' => 'rater#create', :as => 'rate'
   resources :cities
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
