@@ -5,9 +5,9 @@ class HotelsController < ApplicationController
   # GET /hotels.json
   def index
     if params[:term]
-      @hotels = Hotel.whose_name_starts_with  (params[:term])
+      @hotels = Hotel.whose_name_starts_with(params[:term]).paginate(page: params[:page], per_page: 3)
     else
-      @hotels = Hotel.all
+      @hotels = Hotel.all.paginate(page: params[:page], per_page: 3)
     end
   end
 
@@ -18,13 +18,14 @@ class HotelsController < ApplicationController
 
   # GET /hotels/new
   def new
-
+    respond_to do |format|
+      format.html { render :layout => !request.xhr? }
+      # other formats
+    end
   end
 
   #SEARCH
-  def search 
-    @hotels = Hotel.search_content_for(params[:query])
-  end
+  
 
   # GET /hotels/1/edit
   def edit
@@ -69,7 +70,12 @@ class HotelsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  def non_ref
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
 
