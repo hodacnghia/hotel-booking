@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # get location
 gem 'geocoder'
+gem 'gmap_coordinates_picker'
 gem 'devise'
 gem 'cancancan'
 gem 'bootstrap-sass'
