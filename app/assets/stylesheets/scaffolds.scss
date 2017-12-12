@@ -51,31 +51,31 @@ div {
 }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+  // padding: 1px;
+  // background-color: red;
 }
 
 #error_explanation {
-  width: 450px;
-  border: 2px solid red;
+  width: 580px;
   padding: 7px 7px 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+  margin: 0 auto;
+  background-color: #ffffff;
 
   h2 {
-    text-align: left;
+    font-size: 16px;
+    text-align: center;
     font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px -7px 0;
-    background-color: #c00;
-    color: #fff;
+    padding: 20px 20px 20px 15px;
+    margin: 1px 1px 20px 1px;
+    background-color: #ffbcbc;
+    color: #9c0303;
+    border-radius: 2px;
   }
 
   ul li {
-    font-size: 12px;
+    font-size: 16px;
     list-style: square;
+    color: red
   }
 }
 
