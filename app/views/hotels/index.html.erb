@@ -15,7 +15,7 @@
   </thead>
 
   <tbody>
-    <%= will_paginate @hotels %>
+
     <% @hotels.each do |hotel| %>
       <tr>
         <td><%= hotel.name %></td>
@@ -47,5 +47,5 @@
 </table>
 
 <br>
-
+<%= will_paginate @hotels %>
 <%= link_to 'New Hotel', new_hotel_path %>

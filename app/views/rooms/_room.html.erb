@@ -14,10 +14,7 @@
     Phòng Trống
 <%  end %>
 </p>
-<p>
-  <!-- <%=link_to 'Order' ,new_hotel_room_order_path(room.hotel_id, room) %> -->
-  <%=button_to 'Order', new_order_path, method: :get%>
-</p>
+
 <% if can? :update, @hotel %>
   <p>
       <%= link_to 'Destroy Room', [room.hotel, room],
