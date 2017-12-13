@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap.min
+//= require bootstrap-datepicker
 //= require npm
 //= require_tree .
 

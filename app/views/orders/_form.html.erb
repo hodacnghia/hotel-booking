@@ -1,4 +1,4 @@
-<%= form_with(model: @room.orders, local: true) do |form| %>
+<%= form_with(model:[@room, @room.orders]) do |form| %>
 
   <div class="field">
     <%= form.label :form %>

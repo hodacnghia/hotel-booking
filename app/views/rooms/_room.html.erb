@@ -19,6 +19,9 @@
     </h4>
     <% if can? :update, @hotel %>
       <p>
+        <%= link_to 'Order Room', new_hotel_room_order_path(room.hotel_id, room) %>
+      </p>
+      <p>
         <%= link_to 'Destroy Room', [room.hotel, room],
                             method: :delete,
                             data: { confirm: 'Are you sure ?'} %>
@@ -26,6 +29,7 @@
       <p>
         <%= link_to 'Edit Room', edit_hotel_room_path(room.hotel_id, room) %>
       </p>
+      <input type="text" data-provide='datepicker' >
     <% end %>
   </div>
 </div>
