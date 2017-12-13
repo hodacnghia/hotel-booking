@@ -5,7 +5,7 @@ class HotelsController < ApplicationController
   # GET /hotels.json
   def index
     if params[:term]
-      @hotels = Hotel.whose_name_starts_with  (params[:term])
+      @hotels = Hotel.whose_name_starts_with(params[:term]).paginate(page: params[:page], per_page: 3)
     else
       @hotels = Hotel.all.paginate(page: params[:page], per_page: 3)
     end
