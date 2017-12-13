@@ -1,13 +1,13 @@
 class HotelsController < ApplicationController
   load_and_authorize_resource
-  before_action :authenticate_user!, except: [:index, :show] 
+  before_action :authenticate_user!, except: [:index, :show]
   # GET /hotels
   # GET /hotels.json
   def index
     if params[:term]
       @hotels = Hotel.whose_name_starts_with  (params[:term])
     else
-      @hotels = Hotel.all
+      @hotels = Hotel.all.paginate(page: params[:page], per_page: 3)
     end
   end
 
@@ -22,7 +22,7 @@ class HotelsController < ApplicationController
   end
 
   #SEARCH
-  def search 
+  def search
     @hotels = Hotel.search_content_for(params[:query])
   end
 
@@ -76,6 +76,6 @@ class HotelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hotel_params
-      params.require(:hotel).permit(:name,:city_id, :description, :user_id,{picture: []})
+      params.require(:hotel).permit(:name,:city_id, :description,:price ,:user_id,{picture: []})
     end
 end

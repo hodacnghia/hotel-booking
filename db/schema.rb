@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171208033718) do
+ActiveRecord::Schema.define(version: 20171211043119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20171208033718) do
   create_table "hotels", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.integer "price"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -45,8 +46,6 @@ ActiveRecord::Schema.define(version: 20171208033718) do
     t.index ["user_id"], name: "index_hotels_on_user_id"
   end
 
-<<<<<<< HEAD
-=======
   create_table "locations", force: :cascade do |t|
     t.string "address"
     t.float "latitude"
@@ -55,10 +54,10 @@ ActiveRecord::Schema.define(version: 20171208033718) do
     t.datetime "updated_at", null: false
   end
 
->>>>>>> csslayout
   create_table "orders", force: :cascade do |t|
-    t.datetime "form"
-    t.datetime "to"
+    t.date "form"
+    t.date "to"
+    t.decimal "total"
     t.bigint "user_id"
     t.bigint "room_id"
     t.datetime "created_at", null: false

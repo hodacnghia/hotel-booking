@@ -9,7 +9,6 @@ class Hotel < ApplicationRecord
   pg_search_scope :whose_name_starts_with, against: [:name, :description]  ,  :using => {
     :tsearch => {:prefix => true}
 }
-  
       # Validates the size of an uploaded picture.
       def picture_size
         if picture.size > 5.megabytes

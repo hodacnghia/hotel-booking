@@ -219,6 +219,12 @@ body {
     position: relative;
 }
 
+.wrapper_myhotel {
+  max-width: 1100px;
+  margin-left: 10px;
+  position: relative;
+}
+
 h1,
 h2,
 h3,
@@ -575,7 +581,7 @@ header nav .login_btn:hover {
 }
 
 .listings {
-    padding: 100px 0;
+    // padding: 100px 0;
 }
 
 .listings ul.properties_list {
@@ -647,7 +653,7 @@ header nav .login_btn:hover {
     white-space:pre;
     overflow:hidden;
     text-overflow: ellipsis;
-    
+
 }
 
 .listings ul li .property_details h1 a {
@@ -665,7 +671,7 @@ header nav .login_btn:hover {
     white-space:pre;
     overflow:hidden;
     text-overflow: ellipsis;
-    
+
 }
 
 .listings ul li .property_details .property_size {
@@ -1094,7 +1100,7 @@ footer .copyrights a.ph_link {
     -moz-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
   }
-  
+
  .new-hotel-btn:hover {
     background-color: #ffffff;
     color: #009ac9;

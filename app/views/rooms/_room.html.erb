@@ -1,4 +1,41 @@
-<p>
+<!-- chia cot -->
+<div class="col-md-3">
+  <div class="product-item">
+    <h4>
+      <strong>Type:</strong>
+      <%= room.type.name %>
+    </h4>
+    <h4>
+      <strong>Bed:</strong>
+      <%= room.bed %>
+    </h4>
+    <h4>
+      <strong>Status:</strong>
+      <% if room.status == true%>
+        Phòng Đã Đặt
+      <%else%>
+        Phòng Trống
+      <% end %>
+    </h4>
+    <% if can? :update, @hotel %>
+      <p>
+        <%= link_to 'Order Room', new_hotel_room_order_path(room.hotel_id, room) %>
+      </p>
+      <p>
+        <%= link_to 'Destroy Room', [room.hotel, room],
+                            method: :delete,
+                            data: { confirm: 'Are you sure ?'} %>
+      </p>
+      <p>
+        <%= link_to 'Edit Room', edit_hotel_room_path(room.hotel_id, room) %>
+      </p>
+      <input type="text" data-provide='datepicker' >
+    <% end %>
+  </div>
+</div>
+
+
+<!-- <p>
   <strong>Type:</strong>
   <%= room.type.name %>
 </p>
@@ -14,7 +51,6 @@
     Phòng Trống
 <%  end %>
 </p>
-
 <% if can? :update, @hotel %>
   <p>
       <%= link_to 'Destroy Room', [room.hotel, room],
@@ -24,4 +60,4 @@
   <p>
     <%= link_to 'Edit Room', edit_hotel_room_path(room.hotel_id, room) %>
   </p>
-<% end %>
+<% end %> -->

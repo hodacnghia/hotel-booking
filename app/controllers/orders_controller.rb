@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+    @hotel = Hotel.find(params[:hotel_id])
     @room = Room.find(params[:room_id])
     @order = @room.orders.create(order_params)
 
