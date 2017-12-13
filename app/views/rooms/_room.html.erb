@@ -25,7 +25,7 @@
 
 
         <%= link_to 'Edit Room', edit_hotel_room_path(room.hotel_id, room), class:"col-sm-6",style:"text-align:right; padding-right:0px"%>
-
+      <input type="text" data-provide='datepicker' >
     <% end %>
     <%= link_to 'Order', hotel_room_path(room.hotel.id,room), :popup => true, class:"btn-show"%>
 
