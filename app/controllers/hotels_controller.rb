@@ -4,7 +4,11 @@ class HotelsController < ApplicationController
   # GET /hotels
   # GET /hotels.json
   def index
-    @hotels = Hotel.all.paginate(page: params[:page], per_page: 2)
+    if params[:term]
+      @hotels = Hotel.whose_name_starts_with  (params[:term])
+    else
+      @hotels = Hotel.all.paginate(page: params[:page], per_page: 3)
+    end
   end
 
   # GET /hotels/1
@@ -15,6 +19,11 @@ class HotelsController < ApplicationController
   # GET /hotels/new
   def new
 
+  end
+
+  #SEARCH
+  def search
+    @hotels = Hotel.search_content_for(params[:query])
   end
 
   # GET /hotels/1/edit

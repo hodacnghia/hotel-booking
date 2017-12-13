@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   get 'my_hotel/index'
 
+  
+  resources :locations
   post '/rate' => 'rater#create', :as => 'rate'
   resources :cities
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

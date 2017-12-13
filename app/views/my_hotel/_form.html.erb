@@ -1,0 +1,26 @@
+<%= form_with(model: @room.orders, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :form %>
+    <%= form.datetime_select :form, id: :order_form %>
+  </div>
+
+  <div class="field">
+    <%= form.label :to %>
+    <%= form.datetime_select :to, id: :order_to %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :order_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :room_id %>
+    <%= form.text_field :room_id, id: :order_room_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

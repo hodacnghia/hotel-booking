@@ -1,71 +1,68 @@
-<!DOCTYPE html>
-<html>
 
-<head>
+<link rel="stylesheet" type="text/scss" href="custom.scss">
+<link href="http://allfont.net/allfont.css?fonts=p22-corinthia" rel="stylesheet" type="text/css" />
 
-
-
-
-
-</head>
-
-<body>
-
-<header class="header-login-signup">
-
-	<div class="header-limiter">
-
-		<h1><a href="#"><span>logo</span></a></h1>
-
+<section class="hero">
+<header>
+	<div class="wrapper">
+		<a href="#" class="title" style="font-family, albas">Hotel Christmas</a>
+		<a href="#" class="hamburger"></a>
 		<nav>
-			<a href="#">Home</a>
-			<a href="#" class="selected">Blog</a>
-			<a href="#">Pricing</a>
+			<ul>
+				<li><a href="#">Buy</a></li>
+				<li><a href="#">Rent</a></li>
+				<li><a href="#">Sell</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+			<ul>
+			<% if user_signed_in? %>
+		   	<li>
+				<%= link_to "Users", '#' %>
+			</li>
+
+			<li class="dropdown">
+				<a href="" class="dropdown-toogle" data-toggle="dropdown"> Acount<b class="care"></b></a>
+				<ul class="dropdown-menu">
+					<li><%= link_to "Profile", '#' %></li>
+					<li><%= link_to "Settings", edit_user_registration_path %></li>
+					<li class="divider"></li>
+					<li><%= link_to "Log out", destroy_user_session_path ,method: :delete%></li>
+
+			</li>
+
+		    <% else %>
+			<li>
+			   <%= link_to "Sign Up", new_user_registration_path %>
+			</li>
+			<li>
+			  <%= link_to "Log In" , new_user_session_path%>
+			</li>
+		    <% end %>
+	    </ul>
 		</nav>
-
-		<ul>
-                  <% if user_signed_in? %>
-            <li>
-              <%= link_to "Users", '#' %>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Account 
-                <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <%= link_to "Profile", '#' %>
-                </li>
-                <li>
-                  <%= link_to "Settings", edit_user_registration_path %>
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "Log out", destroy_user_session_path ,method: :delete%>
-                </li>
-              </ul>
-            </li>
-            <% else %>
-              <li>
-                <%= link_to "Sign Up", new_user_registration_path %>
-              </li>
-              <li>
-                <%= link_to "Log In" , new_user_session_path%>
-              </li>
-            <% end %>
-		</ul>
-
 	</div>
+</header><!--  end header section  -->
 
-</header>
+	<section class="caption">
+		<h2 class="caption">Find You Dream Hotel</h2>
+
+	</section>
+</section>
+<!--  end hero section  -->
+
+<section class="search">
+<div class="wrapper">
+	<form action="#" method="post">
 
 
+	<%= form_tag hotels_path, method: :get do %>
+		<%= text_field_tag "term", params[:term], placeholder: "What are you looking for?", id:"search" %>
+		<%= submit_tag "Search!" ,id:"submit_search" %>
+	  <% end%>
+
+		</form>
+</div>
 
 
-
-
-
-</body>
-
-</html>
+</section>

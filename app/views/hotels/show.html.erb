@@ -1,30 +1,36 @@
-<p>
-  <strong>Name:</strong>
-  <%= @hotel.name %>
-</p>
+<div>
+  <div class="col-xs-4 col-sm-9">
+    <h2>Rooms</h2>
+    <%= render @hotel.rooms %>
+  </div>
+<div class="col-xs-4 col-sm-3">
+  <p>
+    <strong>Name:</strong>
+    <%= @hotel.name %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @hotel.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @hotel.description %>
+  </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @hotel.user.name %>
-</p>
-<p>
-  <strong>Image url:</strong>
-            <%@hotel.picture.each do |image|%>
-          <%=  image_tag image.url  %>
-          <% end%>
-</p>
+  <p>
+    <strong>User:</strong>
+    <%= @hotel.user.name %>
+  </p>
+  <p>
+    <strong>Image url:</strong>
+    <%@hotel.picture.each do |image|%>
+      <%= image_tag image.url %>
+    <% end%>
+  </p>
 
-<h2>Rooms</h2>
-<%= render @hotel.rooms %>
-<% if can? :update, @hotel %>
-  <h2>Add a room</h2>
-  <%= render 'rooms/form' %>
+  <% if can? :update, @hotel %>
+    <h2>Add a room</h2>
+    <%= render 'rooms/form' %>
+    <%= link_to 'Edit', edit_hotel_path(@hotel) %>
+  <% end %>
 
-  <%= link_to 'Edit', edit_hotel_path(@hotel) %>
-<% end %>
-<%= link_to 'Back', hotels_path %>
+  <%= link_to 'Back', hotels_path %>
+</div>
+</div>
