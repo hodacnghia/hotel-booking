@@ -1,12 +1,11 @@
-<div>
-  <div class="col-xs-4 col-sm-9">
-    <h2>Rooms</h2>
-    <%= render @hotel.rooms %>
+<div class="body_hotel">
+  <div class="col-xs-4 col-sm-9" id="cus_rooms" style="padding-left:40px">
+      <%= render @hotel.rooms %>
   </div>
-<div class="col-xs-4 col-sm-3">
+<div class="col-xs-4 col-sm-3" id="cus_showhotel">
+  <div id="cus_hotel">
   <p>
-    <strong>Name:</strong>
-    <%= @hotel.name %>
+    <h1><%= @hotel.name %></h1>
   </p>
 
   <p>
@@ -19,18 +18,31 @@
     <%= @hotel.user.name %>
   </p>
   <p>
-    <strong>Image url:</strong>
     <%@hotel.picture.each do |image|%>
-      <%= image_tag image.url %>
+      <%= image_tag image.url, width:350%>
     <% end%>
   </p>
-
+  </div>
+  <div>
   <% if can? :update, @hotel %>
-    <h2>Add a room</h2>
+  <hr class="omb_hrOr">
+  <div id="cus_addroom">
+    <h2>ADD A ROOM</h2>
     <%= render 'rooms/form' %>
-    <%= link_to 'Edit', edit_hotel_path(@hotel) %>
   <% end %>
-
-  <%= link_to 'Back', hotels_path %>
+</div>
+  <% if can? :update, @hotel %>
+  <div class="col-sm-6" style="padding:20px 5px 50px 0">
+  <%= link_to 'Edit', edit_hotel_path(@hotel), class:"btn btn-lg btn-success btn-block" %>
+  </div>
+  <div class="col-sm-6" style="padding:20px 0 50px 5px">
+  <%= link_to 'Back', hotels_path, class:"btn btn-lg btn-warning btn-block" %>
+  </div>
+  <% else %>
+  <div class="col-sm-12" style="padding:20px 0 50px 5px">
+  <%= link_to 'Back', hotels_path, class:"btn btn-lg btn-warning btn-block" %>
+  </div>
+  <% end %>
+  </div>
 </div>
 </div>
