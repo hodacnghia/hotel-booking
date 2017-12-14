@@ -1,6 +1,5 @@
-
 <link rel="stylesheet" type="text/scss" href="custom.scss">
-<link href="http://allfont.net/allfont.css?fonts=p22-corinthia" rel="stylesheet" type="text/css" />
+<link href="http://allfont.net/allfont.css?fonts=p22-corinthia" rel="stylesheet" type="text/css"/>
 
 <section class="hero" id="hero">
 <header>
@@ -52,8 +51,7 @@
 		<h2 class="caption">Find You Dream Hotel</h2>
 
 	</section>
-</section>
-<!--  end hero section  -->
+	<!-- end hero section -->
 
 <section class="search">
 <div class="wrapper">
@@ -64,5 +62,11 @@
 	  <% end%>
 </div>
 
+			<%= form_tag hotels_path, method: :get do %>
+			<%= text_field_tag "term", params[:term], placeholder: "What are you looking for?", id:"search" %>
+			<!-- <input type="submit" ,id="submit_search" name="submit_search"/> -->
+		<% end%>
+
+	</div>
 
 </section>

@@ -10,11 +10,11 @@ class CitiesController < ApplicationController
   # GET /cities/1
   # GET /cities/1.json
   def show
-    if @city.home_stays.length == 0
+    if @city.hotel.count == 0
       @assosciated_home_stay = "None"
     else
-      @assosciated_home_stay = @city.home_stays
-      
+      @assosciated_home_stay = @city.hotels
+
     end
   end
 

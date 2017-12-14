@@ -1,4 +1,38 @@
-<p>
+<!-- chia cot -->
+<div class="col-md-3">
+  <div class="product-item">
+    <h4 class="<%=room.type.name%>" style="font-size: 26px; padding:10px; margin:0 10px 0 10px; border-radius: 10px;">
+      <b><%= room.type.name.upcase %></b>
+    </h4>
+    <h4 style="margin-left:10px">
+      <strong>Bed:</strong>
+      <%= room.bed %>
+    </h4>
+    <h4 style="margin-left:10px">
+      <strong>Status:</strong>
+      <% if room.status == true%>
+        Phòng Đã Đặt
+      <%else%>
+        Phòng Trống
+      <% end %>
+    </h4>
+    <div>
+    <% if can? :update, @hotel %>
+
+        <%= link_to 'Destroy Room', [room.hotel, room],
+                            method: :delete,
+                            data: { confirm: 'Are you sure ?'}, class:"col-sm-6",style:"text-align:left; margin-left:-5px" %>
+
+
+        <%= link_to 'Edit Room', edit_hotel_room_path(room.hotel_id, room), class:"col-sm-6",style:"text-align:right; padding-right:0px"%>
+
+    <% end %>
+    </div>
+  </div>
+</div>
+
+
+<!-- <p>
   <strong>Type:</strong>
   <%= room.type.name %>
 </p>
@@ -14,7 +48,6 @@
     Phòng Trống
 <%  end %>
 </p>
-
 <% if can? :update, @hotel %>
   <p>
       <%= link_to 'Destroy Room', [room.hotel, room],
@@ -24,4 +57,4 @@
   <p>
     <%= link_to 'Edit Room', edit_hotel_room_path(room.hotel_id, room) %>
   </p>
-<% end %>
+<% end %> -->
