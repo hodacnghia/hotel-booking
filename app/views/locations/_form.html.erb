@@ -25,11 +25,15 @@
     <%= form.label :longitude %>
     <%= form.text_field :longitude, id: :location_longitude %>
   </div>
-
-  
   <div class="field">
-  <%= form.gmap_coordinate_picker :lat_column => 'latitude', :lng_column => 'longitude' , :zoom_level => 10 , autocomplete: { enable: true, class: 'form-control' }  %>
-</div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </div>
+  <div class="field">
+        <%= form.gmap_coordinate_picker %>
+  </div>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>

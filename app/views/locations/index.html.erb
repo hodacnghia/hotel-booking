@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Locations</h1>
+
+<%= form_tag locations_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Near", :name => nil %>
+<% end %>
+<!-- rest of page -->
 
 <table>
   <thead>

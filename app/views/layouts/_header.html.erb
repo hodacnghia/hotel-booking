@@ -2,8 +2,9 @@
 <link rel="stylesheet" type="text/scss" href="custom.scss">
 <link href="http://allfont.net/allfont.css?fonts=p22-corinthia" rel="stylesheet" type="text/css" />
 
-<section class="hero">
+<section class="hero" id="hero">
 <header>
+
 	<div class="wrapper">
 		<a href="#" class="title" style="font-family, albas">Hotel Christmas</a>
 		<a href="#" class="hamburger"></a>
@@ -17,12 +18,12 @@
 			</ul>
 			<ul>
 
-			
+
 			<% if user_signed_in? %>
 		   	<li>
 				<%= link_to "Users", '#' %>
 			</li>
-			
+
 			<li class="dropdown">
 				<a href="" class="dropdown-toogle" data-toggle="dropdown"> Acount<b class="care"></b></a>
 				<ul class="dropdown-menu">
@@ -30,7 +31,7 @@
 					<li><%= link_to "Settings", edit_user_registration_path %></li>
 					<li class="divider"></li>
 					<li><%= link_to "Log out", destroy_user_session_path ,method: :delete%></li>
-				
+
 			</li>
 
 		    <% else %>
@@ -44,24 +45,22 @@
 	    </ul>
 		</nav>
 	</div>
+
 </header><!--  end header section  -->
 
 	<section class="caption">
 		<h2 class="caption">Find You Dream Hotel</h2>
-		
+
 	</section>
 </section>
 <!--  end hero section  -->
 
 <section class="search">
 <div class="wrapper">
-	<form action="#" method="post">
-		<input type="text" id="search" name="search" placeholder="What are you looking for?"  autocomplete="off"/>
-		<input type="submit" id="submit_search" name="submit_search"/>
-	</form>
+
 	<%= form_tag hotels_path, method: :get do %>
-		<%= text_field_tag "term", params[:term], placeholder: "" %>
-		<%= submit_tag "Search!" %>
+		<%= text_field_tag "term", params[:term], placeholder: "What are you looking for?" , id:"search"%>
+		<input type="submit" id="submit_search" name="submit_search"/>
 	  <% end%>
 </div>
 

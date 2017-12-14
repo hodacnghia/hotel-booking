@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'my_hotel/index'
 
-  
+
   resources :locations
   post '/rate' => 'rater#create', :as => 'rate'
   resources :cities
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :rooms do
       resources :orders
     end
+    resources :locations
   end
 
   scope "/admin" do
@@ -18,6 +19,11 @@ Rails.application.routes.draw do
   end
 
   resources :roles
+
+  resource :geo_ip_request, controller: :geo_ip_request
+
+
+
   root "hotels#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
