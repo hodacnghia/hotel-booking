@@ -18,16 +18,13 @@ class HotelsController < ApplicationController
 
   # GET /hotels/new
   def new
-    respond_to do |format|
-      format.html { render :layout => !request.xhr? }
-      # other formats
-    end
+
   end
 
+  #SEARCH
   def search
     @hotels = Hotel.search_content_for(params[:query])
   end
-
 
   # GET /hotels/1/edit
   def edit
@@ -38,15 +35,16 @@ class HotelsController < ApplicationController
   def create
 
     @hotel.user_id = current_user.id
-    respond_to do |format|
+
       if @hotel.save
-        format.html { redirect_to @hotel, notice: 'Hotel was successfully created.' }
-        format.json { render :new, status: :created, location: @location }
+        
+        redirect_to new_hotel_location_path(@hotel.id)
+
       else
         format.html { render :new }
         format.json { render json: @hotel.errors, status: :unprocessable_entity }
       end
-    end
+
   end
 
   # PATCH/PUT /hotels/1
@@ -72,12 +70,7 @@ class HotelsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  def non_ref
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
 

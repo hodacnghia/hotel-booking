@@ -18,6 +18,8 @@ class LocationsController < ApplicationController
 
   # GET /locations/new
   def new
+    @hotel = Hotel.find(params[:hotel_id])
+
     @location = Location.new
   end
 
@@ -28,11 +30,13 @@ class LocationsController < ApplicationController
   # POST /locations
   # POST /locations.json
   def create
-    @location = Location.new(location_params)
+    @hotel = Hotel.find(params[:hotel_id])
+    @location = Location.create(location_params)
+    @location.hotel_id = @hotel.id
 
     respond_to do |format|
       if @location.save
-        format.html { redirect_to @location, notice: 'Location was successfully created.' }
+        format.html { redirect_to @hotel, notice: 'Location was successfully created.' }
         format.json { render :show, status: :created, location: @location }
       else
         format.html { render :new }

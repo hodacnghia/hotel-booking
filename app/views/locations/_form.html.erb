@@ -1,4 +1,4 @@
-<%= form_for :location, url: hotel_location_path(@hotel.id),method: :POST do |form| %>
+<%= form_for :location, url: hotel_locations_path(@hotel.id),method: :POST do |form| %>
   <% if location.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
@@ -25,13 +25,8 @@
     <%= form.label :longitude %>
     <%= form.text_field :longitude, id: :location_longitude %>
   </div>
-  <div class="field">
-      <%= form.label :name %><br>
-      <%= form.text_field :name %>
-    </div>
-  <div class="field">
-        <%= form.gmap_coordinate_picker %>
-  </div>
+
+
 
 
   <div class="actions">

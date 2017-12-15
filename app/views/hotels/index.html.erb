@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 <h1>Hotels</h1>
+
 <section class="listings">
+  <div id="large-header" class="large-header">
 <div class="wrapper">
   <ul class="properties_list">
       <% @hotels.each do |hotel| %>
@@ -30,6 +32,7 @@
 </div>
 </section>
 
+</div>
 <br>
 
   <%= will_paginate @hotels %>

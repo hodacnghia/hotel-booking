@@ -11,6 +11,7 @@ gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 gem 'pg_search'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -49,6 +50,10 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'textacular'
 # Use Capistrano for deployment
+
+#Send mail
+gem 'delayed_job_active_record'
+gem 'whenever', :require => false
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do

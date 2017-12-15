@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   resource :geo_ip_request, controller: :geo_ip_request
 
-
+  resources :hotel, :has_one => [:location]
 
   root "hotels#index"
 

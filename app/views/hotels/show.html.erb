@@ -21,6 +21,7 @@
           <%= image_tag image.url , width:350%>
         <% end%>
       </p>
+      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@hotel.location.latitude}%2C#{@hotel.location.longitude}" %>
     </div>
     <div>
       <% if can? :update, @hotel %>
