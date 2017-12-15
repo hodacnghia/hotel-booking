@@ -11,13 +11,14 @@
  * It is generally better to create a new file per style scope.
  *
  *= require bootstrap-theme.min
+ *= require bootstrap-datepicker3
  *= require bootstrap.min
  *= require_tree .
  *= require_self
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
-
+ @import 'bootstrap-datetimepicker';
 
 /* For the headers to look good, be sure to reset the margin and padding of the body */
 

@@ -1,13 +1,11 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Type:</strong>
-  <%= @room.type %>
+  <%= @room.type.name %>
 </p>
 
 <p>
   <strong>Hotel:</strong>
-  <%= @room.hotel %>
+  <%= @room.hotel.name %>
 </p>
 
 <p>
@@ -20,5 +18,12 @@
   <%= @room.status %>
 </p>
 
+<h2>Orders</h2>
+<%= render @room.orders %>
+
+<h2>Add a order:</h2>
+<%= render 'orders/form' %>
+
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>
+</div>

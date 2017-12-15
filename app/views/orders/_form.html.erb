@@ -1,13 +1,12 @@
-<%= form_with(model: @room.orders, local: true) do |form| %>
+<%= form_with(model: [ @room, @room.orders.build(:user_id => current_user.id) ]) do |form| %>
 
   <div class="field">
     <%= form.label :form %>
-    <%= form.datetime_select :form, id: :order_form %>
+    <%= form.text_field :form, id: :order_form, class:'datepicker' %>
   </div>
-
   <div class="field">
     <%= form.label :to %>
-    <%= form.datetime_select :to, id: :order_to %>
+    <%= form.text_field :to, id: :order_to, class:'datepicker' %>
   </div>
 
   <div class="field">
@@ -24,3 +23,16 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<% @order.each do |order| %>
+  <%= order.form.strftime("%d-%m-%Y") %>
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.datepicker').datepicker({
+      format: "dd-mm-yyyy",
+      datesDisabled: ['15/12/2017']
+    });
+  });
+</script>

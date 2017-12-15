@@ -45,6 +45,9 @@ gem 'omniauth-facebook'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'textacular'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+gem 'bootstrap-datepicker-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

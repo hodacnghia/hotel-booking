@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to room_path(@room) }
+        format.html { redirect_to room_path(@room)}
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
