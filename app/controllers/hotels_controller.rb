@@ -24,10 +24,10 @@ class HotelsController < ApplicationController
     end
   end
 
-  #SEARCH
   def search
     @hotels = Hotel.search_content_for(params[:query])
   end
+
 
   # GET /hotels/1/edit
   def edit
@@ -41,7 +41,7 @@ class HotelsController < ApplicationController
     respond_to do |format|
       if @hotel.save
         format.html { redirect_to @hotel, notice: 'Hotel was successfully created.' }
-        format.json { render :show, status: :created, location: @hotel }
+        format.json { render :new, status: :created, location: @location }
       else
         format.html { render :new }
         format.json { render json: @hotel.errors, status: :unprocessable_entity }

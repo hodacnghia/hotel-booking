@@ -84,7 +84,6 @@ video {
 
 body {
     line-height: 1;
-    background-color: white;
 }
 
 img {
@@ -219,12 +218,6 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     position: relative;
-}
-
-.wrapper_myhotel {
-  max-width: 1100px;
-  margin-left: 10px;
-  position: relative;
 }
 
 h1,
@@ -583,8 +576,7 @@ header nav .login_btn:hover {
 }
 
 .listings {
-    // padding: 100px 0;
-
+    padding: 100px 0;
 }
 
 .listings ul.properties_list {

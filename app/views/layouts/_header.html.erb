@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/scss" href="custom.scss">
 <link href="http://allfont.net/allfont.css?fonts=p22-corinthia" rel="stylesheet" type="text/css"/>
 
-<section class="hero" id="hero">
+<section class="hero">
 <header>
 
 	<div class="wrapper">
@@ -62,10 +62,7 @@
 	  <% end%>
 </div>
 
-			<%= form_tag hotels_path, method: :get do %>
-			<%= text_field_tag "term", params[:term], placeholder: "What are you looking for?", id:"search" %>
-			<!-- <input type="submit" ,id="submit_search" name="submit_search"/> -->
-		<% end%>
+
 
 	</div>
 

@@ -4,8 +4,9 @@ class CreateLocations < ActiveRecord::Migration[5.1]
       t.string :address
       t.float :latitude
       t.float :longitude
-      t.references :hotel, foreign_key: true
-      
+      t.belongs_to :hotel, foreign_key: true
+
+
       t.timestamps
     end
   end
