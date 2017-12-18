@@ -1,4 +1,4 @@
-<%= form_with(model: [ @room, @room.orders.build(:user_id => current_user.id) ]) do |form| %>
+<%= form_with(model: [ @hotel ,@room, @room.orders.build(:user_id => current_user.id) ]) do |form| %>
 
   <div class="field">
     <%= form.label :form %>
@@ -9,24 +9,12 @@
     <%= form.text_field :to, id: :order_to, class:'datepicker' %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :order_user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :room_id %>
-    <%= form.text_field :room_id, id: :order_room_id %>
-  </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
 
-<% @order.each do |order| %>
-  <%= order.form.strftime("%d-%m-%Y") %>
-<% end %>
+
 
 <script type="text/javascript">
   $(document).ready(function(){

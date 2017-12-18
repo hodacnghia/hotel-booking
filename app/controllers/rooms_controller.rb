@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:show]
 
   # GET /rooms
   # GET /rooms.json
@@ -10,7 +11,10 @@ class RoomsController < ApplicationController
   # GET /rooms/1
   # GET /rooms/1.json
   def show
-    @order = @room.orders.all
+    @hotel = Hotel.find(params[:hotel_id])    
+    @room = @hotel.rooms.find(params[:id])    
+    @orders = @room.orders.all
+    @order = @room.orders.create()
   end
 
   # GET /rooms/new
@@ -27,6 +31,7 @@ class RoomsController < ApplicationController
   def create
     @hotel = Hotel.find(params[:hotel_id])
     @room = @hotel.rooms.create(room_params)
+    @room.user_id = current_user.id
 
     respond_to do |format|
       if @room.save

@@ -35,15 +35,16 @@ class HotelsController < ApplicationController
   def create
 
     @hotel.user_id = current_user.id
-    respond_to do |format|
+
       if @hotel.save
-        format.html { redirect_to @hotel, notice: 'Hotel was successfully created.' }
-        format.json { render :show, status: :created, location: @hotel }
+        
+        redirect_to new_hotel_location_path(@hotel.id)
+
       else
         format.html { render :new }
         format.json { render json: @hotel.errors, status: :unprocessable_entity }
       end
-    end
+
   end
 
   # PATCH/PUT /hotels/1

@@ -15,10 +15,10 @@
 
   <tbody>
     <% @orders.each do |order| %>
-      <tr>
+      <tr></tr>
         <td><%= order.form %></td>
         <td><%= order.to %></td>
-        <td><%= order.user %></td>
+        <td><%= order.user.name %></td>
         <td><%= order.room %></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%= link_to 'New Order', new_hotel_room_order_path %>

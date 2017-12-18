@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
-  load_and_authorize_resource  
-  before_action :authenticate_user!, except: [:index, :show]  
-  
+  load_and_authorize_resource
+  before_action :authenticate_user!, except: [:index, :show]
+
 
   # GET /users
   # GET /users.json
   def index
- 
+    # returns Geocoder::Result object
   end
 
   # GET /users/1
@@ -30,6 +30,10 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+
+
+        ModelMailer.new_record_notification(@user).deliver
+
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -46,13 +50,13 @@ class UsersController < ApplicationController
       user_params.delete(:password)
       user_params.delete(:password_confirmation)
     end
-  
+
     successfully_updated = if needs_password?(@user, user_params)
                              @user.update(user_params)
                            else
                              @user.update_without_password(user_params)
                            end
-  
+
     respond_to do |format|
       if successfully_updated
         format.html { redirect_to @user, notice: 'User was successfully updated.' }

@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  
 
   # GET /orders
   # GET /orders.json
@@ -10,10 +12,13 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @room = Room.find(params[:room_id])
+    @order = Order.new
   end
 
   # GET /orders/new
   def new
+    @room = Room.find(params[:room_id])
     @order = Order.new
   end
 

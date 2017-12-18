@@ -1,0 +1,7 @@
+<h1>GeoIP Example</h1>
+<p>Get the country for any ip address or hostname by typing it below and pressing the lookup button.</p>
+
+<%= form_for :request, url: geo_ip_request_path do |f| %>
+  <%= f.text_field :host %>
+  <%= f.submit "Lookup" %>
+<% end %>

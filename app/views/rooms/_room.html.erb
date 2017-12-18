@@ -27,8 +27,7 @@
         <%= link_to 'Edit Room', edit_hotel_room_path(room.hotel_id, room), class:"col-sm-6",style:"text-align:right; padding-right:0px"%>
 
     <% end %>
-    <%= link_to 'Show', room, :popup => true, class:"btn-show"%>
-  <a href="" class="popup" onclik="show_order()">Show 2</a>
+    <%= link_to 'Order', hotel_room_path(room.hotel.id,room), :popup => true, class:"btn-show"%>
 
 
     </div>

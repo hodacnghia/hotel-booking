@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 <h1>Hotels</h1>
+
 <section class="listings">
+  <div id="large-header" class="large-header">
 <div class="wrapper">
   <ul class="properties_list">
       <% @hotels.each do |hotel| %>
@@ -24,13 +26,15 @@
         <td><%= link_to 'Show', hotel %></td>
       </div>
     </li>
-    </tr>
   <% end %>
 </ul>
-<a href="#" class="more_listing_btn">View More Listings</a>
+
 </div>
 </section>
+
+</div>
 <br>
-<br>
-<%= will_paginate @hotels %>
-<%= link_to 'New Hotel', new_hotel_path %>
+
+  <%= will_paginate @hotels %>
+
+<%= link_to 'New Hotel', new_hotel_path%>

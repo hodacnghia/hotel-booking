@@ -1,8 +1,12 @@
 <p>
   <strong>Form:</strong>
-  <%= order.form.strftime("%d-%m-%Y")%>
+  <%= order.form%>
 </p>
 <p>
   <strong>To:</strong>
-  <%= order.to.strftime("%d-%m-%Y") %>
+  <%= order.to %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%=order.user_id %>
 </p>

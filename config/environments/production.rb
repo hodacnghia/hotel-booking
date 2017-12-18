@@ -61,7 +61,19 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "team1_#{Rails.env}"
   config.action_mailer.perform_caching = false
-
+  config.action_mailer.delivery_method = :smtp
+# SMTP settings for gmail
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+:authentication => :plain,
+:address => "smtp.mailgun.org",
+:port => 587,
+:domain => "sandbox4778daa4185947d79e86ae6b8c25c372.mailgun.org",
+:user_name => "postmaster@sandbox4778daa4185947d79e86ae6b8c25c372.mailgun.org",
+:password => "ac10f916d16a43ec1a7d0fccbf9c74fc"
+}
+# Specify what domain to use for mailer URLs
+config.action_mailer.default_url_options = {host: "localhost:3000"}
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false

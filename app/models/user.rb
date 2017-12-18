@@ -9,7 +9,6 @@ class User < ApplicationRecord
   before_save :assign_role
   has_many :hotels  ,:dependent => :destroy
   ratyrate_rater
-
   def assign_role
     self.role = Role.find_by name: "Regular" if self.role.nil?
   end
@@ -18,6 +17,9 @@ class User < ApplicationRecord
   end
   def regular?
     self.role.name == "Regular"
+  end
+  def host?
+    self.role.name == "Host"
   end
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
     data = access_token.info
@@ -51,7 +53,7 @@ end
     end
     user
 end
-# 
+#
 # geocoded_by :full_address # full_address is a method which take some model's attributes to get a formatted address for example
 #
 #   # the callback to set longitude and latitude

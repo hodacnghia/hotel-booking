@@ -4,7 +4,11 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
+    if params[:search].present?
+      @locations = Location.near(params[:search], 50, :order => :distance, :units => :km)
+    else
+      @locations = Location.all
+    end
   end
 
   # GET /locations/1
@@ -14,6 +18,8 @@ class LocationsController < ApplicationController
 
   # GET /locations/new
   def new
+    @hotel = Hotel.find(params[:hotel_id])
+
     @location = Location.new
   end
 
@@ -24,11 +30,13 @@ class LocationsController < ApplicationController
   # POST /locations
   # POST /locations.json
   def create
-    @location = Location.new(location_params)
+    @hotel = Hotel.find(params[:hotel_id])
+    @location = Location.create(location_params)
+    @location.hotel_id = @hotel.id
 
     respond_to do |format|
       if @location.save
-        format.html { redirect_to @location, notice: 'Location was successfully created.' }
+        format.html { redirect_to @hotel, notice: 'Location was successfully created.' }
         format.json { render :show, status: :created, location: @location }
       else
         format.html { render :new }
@@ -60,10 +68,10 @@ class LocationsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  def search 
+  def search
     @userLocation = request.location #gets the ip of the user
     @searchResults = Geocoder.search(search_locations)
-    @locations = @searchResults.near(@userLocation, 50, :order => :distance)
+    @locations = @searchResults.near(@userLocation, 50, :order => :distance ,:units => :km)
   end
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -73,6 +81,6 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:address, :latitude, :longitude)
+      params.require(:location).permit(:address, :latitude,:hotel_id, :longitude)
     end
 end

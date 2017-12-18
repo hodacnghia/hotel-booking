@@ -11,6 +11,7 @@ gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 gem 'pg_search'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -32,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # get location
 gem 'geocoder'
+gem 'geoip'
+gem 'gmaps4rails'
+
 gem 'gmap_coordinates_picker'
 gem 'devise'
 gem 'cancancan'
@@ -49,6 +53,10 @@ gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 gem 'bootstrap-datepicker-rails'
 # Use Capistrano for deployment
+
+#Send mail
+gem 'delayed_job_active_record'
+gem 'whenever', :require => false
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do

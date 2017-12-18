@@ -22,6 +22,8 @@
         <h2><td><%= hotel.description %></td> <span class="property_size"></span></h2>
         <td><%= hotel.user.name %></td>
         <td><%= link_to 'Show', hotel %></td>
+        <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
+        <td><%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </div>
     </li>
     </tr>
