@@ -29,6 +29,9 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
+
+        Notifier.order_received(@order).deliver
+        
         format.html { redirect_to room_path(@room) }
         format.json { render :show, status: :created, location: @order }
       else
