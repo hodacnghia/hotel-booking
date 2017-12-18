@@ -12,12 +12,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= @order.user %>
+  <%= @order.user.name %>
 </p>
 
 <p>
   <strong>Room:</strong>
-  <%= @order.room %>
+  <%= @order.room.id %>
 </p>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
