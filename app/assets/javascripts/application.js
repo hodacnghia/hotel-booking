@@ -17,13 +17,11 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap.min
+//= require bootstrap-datepicker
 //= require npm
 //= require moment
 //= require bootstrap-datetimepicker
-//= require bootstrap-datepicker
 //= require bootstrap-datepicker/core
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
 //= require_tree .
 
 

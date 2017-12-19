@@ -14,7 +14,7 @@ class RoomsController < ApplicationController
     @hotel = Hotel.find(params[:hotel_id])    
     @room = @hotel.rooms.find(params[:id])    
     @orders = @room.orders.all
-    @order = @room.orders.create()
+
   end
 
   # GET /rooms/new
@@ -31,7 +31,7 @@ class RoomsController < ApplicationController
   def create
     @hotel = Hotel.find(params[:hotel_id])
     @room = @hotel.rooms.create(room_params)
-    @room.user_id = current_user.id
+
 
     respond_to do |format|
       if @room.save
@@ -52,7 +52,7 @@ class RoomsController < ApplicationController
     @room = @hotel.rooms.find(params[:id])
     respond_to do |format|
       if @room.update(room_params)
-        format.html { redirect_to hotel_path(@hotel)}
+        format.html { redirect_to root}
         format.json { render :show, status: :ok, location: @room }
       else
         format.html { render :edit }
@@ -81,6 +81,6 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:type_id, :hotel_id, :bed, :status)
+      params.require(:room).permit(:type_id, :hotel_id,:price, :bed, :status)
     end
 end

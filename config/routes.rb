@@ -17,7 +17,6 @@ Rails.application.routes.draw do
 
 
 
-  resources :orders
 
   scope "/admin" do
     resources :users

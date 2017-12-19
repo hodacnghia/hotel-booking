@@ -20,9 +20,9 @@
         <td><%= order.to %></td>
         <td><%= order.user.name %></td>
         <td><%= order.room %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= link_to 'Show', hotel_room_order(@hotel.id , @room.id, order) %></td>
+        <td><%#= link_to 'Edit', edit_hotel_room_order_path(order) %></td>
+        <td><%#= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
