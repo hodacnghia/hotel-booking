@@ -65,12 +65,12 @@ Rails.application.configure do
 # SMTP settings for gmail
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
-:authentication => :plain,
-:address => "smtp.mailgun.org",
-:port => 587,
-:domain => "sandbox4778daa4185947d79e86ae6b8c25c372.mailgun.org",
-:user_name => "postmaster@sandbox4778daa4185947d79e86ae6b8c25c372.mailgun.org",
-:password => "ac10f916d16a43ec1a7d0fccbf9c74fc"
+ :address              => "smtp.gmail.com",
+ :port                 => 587,
+ :user_name            => ENV['gmail_username'],
+ :password             => ENV['gmail_password'],
+ :authentication       => "plain",
+:enable_starttls_auto => true
 }
 # Specify what domain to use for mailer URLs
 config.action_mailer.default_url_options = {host: "localhost:3000"}

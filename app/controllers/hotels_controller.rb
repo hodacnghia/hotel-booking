@@ -26,6 +26,11 @@ class HotelsController < ApplicationController
     @hotels = Hotel.search_content_for(params[:query])
   end
 
+
+
+
+
+
   # GET /hotels/1/edit
   def edit
   end
@@ -37,7 +42,7 @@ class HotelsController < ApplicationController
     @hotel.user_id = current_user.id
 
       if @hotel.save
-        
+
         redirect_to new_hotel_location_path(@hotel.id)
 
       else

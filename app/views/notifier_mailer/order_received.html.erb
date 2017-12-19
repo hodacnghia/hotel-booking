@@ -1,0 +1,17 @@
+<h3>Hotels Christmas</h3>
+<p>
+    Dear <b><%= @user.name %></b>,
+</p>
+
+<p>
+    Thank you for your order!
+</p>
+<table>
+    <tr>
+        <th colspan="2">Quantity</th>
+        <th>Description</th>
+    </tr>
+    <%= render @order.line_items %>
+</table>
+
+<p>Thanks for using <b>Hotels Christmas<b> and best regards.</p>

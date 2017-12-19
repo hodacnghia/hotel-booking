@@ -41,7 +41,14 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
+<<<<<<< HEAD
         format.html { redirect_to hotel_room_path(@room.hotel_id,@room.id)}
+=======
+
+        Notifier.order_received(@order).deliver
+
+        format.html { redirect_to room_path(@room) }
+>>>>>>> csslayout
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }

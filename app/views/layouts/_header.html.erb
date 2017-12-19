@@ -3,12 +3,13 @@
 
 <section class="hero">
 	<header>
-		<div class="wrapper">
-			<a href="#" class="title" style="font-family, albas">Hotel Christmas</a>
+		<div class="wrapper" >
+			<%=image_tag("logo.png", :width => 200, :height => 100)%>
 			<a href="#" class="hamburger"></a>
 			<nav>
 				<ul>
 					<li>
+<<<<<<< HEAD
 						<% if user_signed_in? %>
             <% if current_user.hotels.nil? %>
               <%= link_to "Become a host" , new_hotel_path %>
@@ -36,26 +37,25 @@
           <%end%>
           </li>
       
+=======
+						<a href="">Home</a>
+					</li>
+					<li>
+						<a href="#">About</a>
+					</li>
+					<li>
+						<a href="#">Contact</a>
+>>>>>>> csslayout
 					</li>
 					
 				</ul>
 				<ul>
 					<% if user_signed_in? %>
-						<li>
-							<%= link_to "Users", '#' %>
-						</li>
 
-						<li class="dropdown">
-							<a href="" class="dropdown-toogle" data-toggle="dropdown">
-								Acount<b class="caret"></b>
-							</a>
-							<ul class="dropdown-menu">
-								<li><i class="icon-cog"></i><%= link_to "Profile", '#' %></li>
-								<li><i class="icon-envelope"></i><%= link_to "Settings", edit_user_registration_path %></li>
-								<li class="divider"></li>
-								<li><i class="icon-off"></i><%= link_to "Log out", destroy_user_session_path ,method: :delete%></li>
+						<li></i><%= link_to "Profile", '#' %></li>
+					 	<li></i><%= link_to "Settings", edit_user_registration_path %></li>
+						<li></i><%= link_to "Log out", destroy_user_session_path ,method: :delete%></li>
 
-							</li>
 
 						<% else %>
 							<li>
@@ -67,6 +67,7 @@
 						<% end %>
 					</ul>
 				</nav>
+
 			</div>
 		</header>
 		<!-- end header section -->
@@ -75,17 +76,14 @@
 			<h2 class="caption">Find You Dream Hotel</h2>
 
 		</section>
+</canvas>
 	</section>
-	<!-- end hero section -->
-
 	<section class="search">
 		<div class="wrapper">
-
 			<%= form_tag hotels_path, method: :get do %>
 			<%= text_field_tag "term", params[:term], placeholder: "What are you looking for?", id:"search" %>
 			<!-- <input type="submit" ,id="submit_search" name="submit_search"/> -->
 		<% end%>
-
+	</section>
 	</div>
-
-</section>
+	<!-- end hero section -->
