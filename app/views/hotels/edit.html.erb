@@ -1,6 +1,56 @@
 <h1>Editing Hotel</h1>
 
-<%= render 'form', hotel: @hotel %>
+<%= form_for @hotel, url: hotel_path(@hotel), method: :patch do |form| %>
+  <% if @hotel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hotel.errors.count, "error") %> prohibited this hotel from being saved:</h2>
 
-<%= link_to 'Show', @hotel %> |
-<%= link_to 'Back', hotels_path %>
+      <ul>
+      <% @hotel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="field">
+    <%= form.label :city_id %>
+    <%= collection_select(:hotel, :city_id, City.all, :id, :name, {prompt: true}) %>
+
+  </div>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :hotel_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :hotel_description %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+<p>
+  <div class="field">
+  <td>
+  <%if @hotel.picture.count == 0%>
+    no picture
+  <%end%>
+  <%@hotel.picture.each_with_index do |picture, index|%>   
+    <%=  image_tag picture.url %>  
+    <%= link_to "Delete" , hotel_picture_path(@hotel,index), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" }%>
+  <% end%>
+  </td>
+  </div>
+  <%= form_for @hotel, url: hotel_picture_index_path(@hotel), method: :post do |f| %>
+  <%= f.file_field :picture,multiple: true, id: :hotel_picture %>
+  <%= f.submit "Add a new"%>
+  <%end%>
+  
+
+</p>
+<%= link_to 'Show', @home_stay %> |
+<%= link_to 'Back', :back , style: "    text-decoration:none" %>

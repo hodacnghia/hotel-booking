@@ -26,6 +26,9 @@
 <%= render @room.orders %>
 
 <h2>Add a order:</h2>
+<% @room.orders.each do |order| %>
+  <%=order.to   %>
+<% end %>
 <%= render 'orders/form' %>
 <%= link_to 'Edit', edit_hotel_room_path(@room) %> |
 <%= link_to 'Back', :back %>
