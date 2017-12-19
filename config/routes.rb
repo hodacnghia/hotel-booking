@@ -13,12 +13,14 @@ Rails.application.routes.draw do
       resources :orders
     end
     resources :locations
-<<<<<<< HEAD
-=======
+
     collection do
         get :autocomplete
     end
->>>>>>> csslayout
+
+    resources :picture , only: [:create, :destroy]
+    
+
   end
 
 
