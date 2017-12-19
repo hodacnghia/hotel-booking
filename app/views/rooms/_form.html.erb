@@ -1,35 +1,31 @@
 <%= form_with(model: [ @hotel, @hotel.rooms.build]) do |form| %>
-<div class="col-sm-4" style="padding:0">
-  <p style="margin-bottom:0">
-    <%= form.label :type_id %><a> : </a>
-  </p>
-  <p>
-    <%= collection_select(:room, :type_id, Type.all, :id, :name, {prompt: true}) %>
-  </p>
-</div>
-
-<div class="col-sm-4">
-  <p style="margin-bottom:0"><%= form.label :bed %><a> : </a></p>
-  <p>
-    <%= form.number_field :bed, id: :room_bed, style:"width:100px"%>
-  </p>
-</div>
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, id: :room_price %>
+  <div class="col-sm-5" id="cus_type">
+    <p>
+      <%= form.label :type_id %><a> : </a>
+    </p>
+    <p>
+      <%= collection_select(:room, :type_id, Type.all, :id, :name, {prompt: true}) %>
+    </p>
   </div>
-<div class="col-sm-4">
-<p style="margin-bottom:0">
-  <%= form.label :status %>
-</p>
-<p>
-  <%= form.check_box :status, id: :room_status %>
-</p>
-</div>
-<p>
-  <!-- <%= form.submit %> -->
-  <button class="btn btn-lg btn-primary btn-block" style="margin-top:10px" type="submit">Create Room</button>
-  
-</p>
 
+  <div class="col-sm-5" id="cus_bed">
+    <p><%= form.label :bed %><a> : </a></p>
+    <p>
+      <%= form.number_field :bed, id: :room_bed, id:"cus_label_bed"%>
+    </p>
+  </div>
+
+  <div class="col-sm-0" >
+    <%= form.label :status %><br>
+    <%= form.check_box :status, id: :room_status %>
+  </div>
+
+<div class="col-sm-12" id="cus_price">
+    <%= form.label :price %><br>
+    <%= form.text_field :price, id: :room_price, id:"cus_label_price" %>
+</div>
+
+<p>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Create Room</button>
+</p>
 <% end %>

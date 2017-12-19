@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>
 
 <h1>Cities</h1>
 
@@ -13,7 +13,7 @@
 
   <tbody>
     <% @cities.each do |city| %>
-      <tr>
+      <tr class="oaerror info">
         <td><%= city.name %></td>
         <td><%= city.description %></td>
         <td><%= link_to 'Show', city %></td>
@@ -24,6 +24,31 @@
   </tbody>
 </table>
 
-<br>
+<br> -->
 
-<%= link_to 'New City', new_city_path %>
+<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row col-md-12 col-md-offset-0 custyle">
+      <h1>CITIES</h1>
+    <table class="table table-striped custab">
+    <thead>
+    <%= link_to '+ New City', new_city_path, class:"btn btn-primary btn-xs pull-right"%>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    <% @cities.each do |city| %>
+            <tr>
+                <td><%= city.name %></td>
+                <td><%= city.description %></td>
+                <td class="text-center">
+                  <%= link_to 'Edit', edit_city_path(city), class:'btn btn-info btn-xs' %>
+                  <%= link_to 'Destroy', city, class:"btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
+            </tr>
+    <% end %>
+    </table>
+    </div>
+</div>
