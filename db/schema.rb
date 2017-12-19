@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 20171215080445) do
   create_table "hotels", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.integer "price"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -72,12 +71,9 @@ ActiveRecord::Schema.define(version: 20171215080445) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.date "form"
-    t.date "to"
-<<<<<<< 366fa65fbcf4903b08dc821d79e4089ad3d11453
-=======
+    t.string "form"
+    t.string "to"
     t.decimal "total"
->>>>>>> order
     t.bigint "user_id"
     t.bigint "room_id"
     t.datetime "created_at", null: false
@@ -130,6 +126,7 @@ ActiveRecord::Schema.define(version: 20171215080445) do
   create_table "rooms", force: :cascade do |t|
     t.bigint "type_id"
     t.integer "bed"
+    t.decimal "price"
     t.boolean "status"
     t.bigint "hotel_id"
     t.datetime "created_at", null: false

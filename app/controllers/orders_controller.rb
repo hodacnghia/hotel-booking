@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-  
+
 
   # GET /orders
   # GET /orders.json
@@ -12,14 +12,19 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+ 
     @room = Room.find(params[:room_id])
-    @order = Order.new
+    @hotel =Room.find(params[@room.hotel_id])
+    @orders = @room.orders.all
+    @date
+    @orders.each do |order|
+            
+    end
   end
 
   # GET /orders/new
   def new
     @room = Room.find(params[:room_id])
-    @order = Order.new
   end
 
   # GET /orders/1/edit
@@ -29,13 +34,14 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @hotel = Hotel.find(params[:hotel_id])
+  
     @room = Room.find(params[:room_id])
     @order = @room.orders.create(order_params)
+    @order.user_id = current_user.id
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to room_path(@room)}
+        format.html { redirect_to hotel_room_path(@room.hotel_id,@room.id)}
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -73,7 +79,9 @@ class OrdersController < ApplicationController
     def set_order
       @order = Order.find(params[:id])
     end
-
+    def set_order
+      @order = Order.find(params[:id])
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
       params.require(:order).permit(:form, :to, :user_id, :room_id)

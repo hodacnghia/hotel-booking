@@ -9,6 +9,10 @@
       <%= room.bed %>
     </h4>
     <h4 style="margin-left:10px">
+      <strong>Bed:</strong>
+      <%= room.price %>
+    </h4>
+    <h4 style="margin-left:10px">
       <strong>Status:</strong>
       <% if room.status == true%>
         Phòng Đã Đặt
@@ -25,7 +29,7 @@
 
 
         <%= link_to 'Edit Room', edit_hotel_room_path(room.hotel_id, room), class:"col-sm-6",style:"text-align:right; padding-right:0px"%>
-      <input type="text" data-provide='datepicker' >
+
     <% end %>
     <%= link_to 'Order', hotel_room_path(room.hotel.id,room), :popup => true, class:"btn-show"%>
 

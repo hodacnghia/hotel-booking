@@ -1,26 +1,44 @@
-<%= form_with(model: [ @hotel ,@room, @room.orders.build(:user_id => current_user.id) ]) do |form| %>
-
+<%= form_for :order, url: hotel_room_orders_path(@hotel.id,@room.id),method: :POST do |form| %>
   <div class="field">
     <%= form.label :form %>
-    <%= form.text_field :form, id: :order_form, class:'datepicker' %>
+      <div class="form-group">
+        <div class='input-group date' id='datetimepicker6'>
+          <%= form.text_field :form, id: :order_form, class:'form-control' %>
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
+      </div>
   </div>
   <div class="field">
-    <%= form.label :to %>
-    <%= form.text_field :to, id: :order_to, class:'datepicker' %>
+    <%= form.label :form %>
+      <div class="form-group">
+        <div class='input-group date' id='datetimepicker7'>
+          <%= form.text_field :to, id: :order_to, class:'form-control' %>
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
+      </div>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
-<% end %>
+  <% end %>
 
 
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('.datepicker').datepicker({
-      format: "dd-mm-yyyy",
-      datesDisabled: ['15/12/2017']
-    });
-  });
-</script>
+    <script type="text/javascript">
+      $(function () {
+        $('#datetimepicker6').datetimepicker();
+        $('#datetimepicker7').datetimepicker({
+          useCurrent: false //Important! See issue #1075
+        });
+        $("#datetimepicker6").on("dp.change", function (e) {
+          $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker7").on("dp.change", function (e) {
+          $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+        });
+      });
+    </script>
