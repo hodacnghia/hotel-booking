@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'geocoder'
 gem 'geoip'
 gem 'gmaps4rails'
-
+gem "figaro"
 gem 'gmap_coordinates_picker'
 gem 'devise'
 gem 'cancancan'

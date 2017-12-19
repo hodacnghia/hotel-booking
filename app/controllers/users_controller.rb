@@ -32,7 +32,8 @@ class UsersController < ApplicationController
       if @user.save
 
 
-        ModelMailer.new_record_notification(@user).deliver
+        ExampleMailer.sample_email(@user).deliver
+
 
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }

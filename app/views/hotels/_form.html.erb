@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+
 <div class="field">
     <%= form.label :city_id %>
     <%= collection_select(:hotel, :city_id, City.all, :id, :name, {prompt: true}) %>

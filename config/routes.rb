@@ -13,6 +13,9 @@ Rails.application.routes.draw do
       resources :orders
     end
     resources :locations
+    collection do
+        get :autocomplete
+    end
   end
 
   resources :rooms do
