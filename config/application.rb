@@ -14,5 +14,16 @@ module Team1
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    ActionMailer::Base.smtp_settings = {
+
+      :address => "smtp.mailgun.org",
+      :port => 587,
+      :domain => "mail.google.com",
+      :user_name => "blackcat22121996@gmail.com",
+      :password => "minhhien",
+      :authentication => "login",
+      :enable_starttls_auto => true
+    }
   end
 end

@@ -12,13 +12,13 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
- 
+
     @room = Room.find(params[:room_id])
     @hotel =Room.find(params[@room.hotel_id])
     @orders = @room.orders.all
     @date
     @orders.each do |order|
-            
+
     end
   end
 
@@ -34,21 +34,16 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-  
+
     @room = Room.find(params[:room_id])
     @order = @room.orders.create(order_params)
     @order.user_id = current_user.id
 
     respond_to do |format|
       if @order.save
-<<<<<<< HEAD
+
+        PostMailer.post_created(@user).deliver
         format.html { redirect_to hotel_room_path(@room.hotel_id,@room.id)}
-=======
-
-        Notifier.order_received(@order).deliver
-
-        format.html { redirect_to room_path(@room) }
->>>>>>> csslayout
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }

@@ -13,12 +13,7 @@ Rails.application.routes.draw do
       resources :orders
     end
     resources :locations
-<<<<<<< HEAD
-=======
-    collection do
-        get :autocomplete
-    end
->>>>>>> csslayout
+
   end
 
 
