@@ -36,16 +36,21 @@ class Ability
         can :read, :all
         can :create, Hotel
         can :read, City
+
         can :update, Hotel do |hotel|
           hotel.try(:user) == user
         end
         can :destroy, Hotel do |hotel|
           hotel.try(:user) == user
         end
+        can :create, Order
+        can :update, Order do |order|
+          order.try(:user) == user
+        end
       else
         can :read, Hotel
         can :read, City
-      
+     
 
       end
     end
