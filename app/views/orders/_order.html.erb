@@ -1,14 +1,11 @@
-<p style="background-color:white; margin:0 15px 30px 15px;" class="col-sm-2" id="cus_order_show">
-  <strong>ID:</strong>
-  <%= order.id %>
-  <strong>User:</strong>
-  <%= order.user.name %>
-  <strong>Form:</strong>
-  <%= order.form.strftime("%d-%m-%Y")%><br>
-  <strong>To:</strong>
-  <%= order.to %>
-</p>
-<p>
+<p style="background-color:white; margin:0 15px 30px 15px;" class="cus_order_show col-sm-2 " id="cus_order_show">
+
   <strong>User:</strong>
   <%=order.user.email %>
+
+  <strong id="<%= order.form%>" class="form">Form:</strong>
+  <%= order.form%><br>
+  <strong id="<%= order.to %>" class="to">To:</strong>
+  <%= order.to %>
 </p>
+

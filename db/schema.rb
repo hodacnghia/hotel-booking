@@ -71,8 +71,8 @@ ActiveRecord::Schema.define(version: 20171215080445) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.datetime "form"
-    t.datetime "to"
+    t.date "form"
+    t.date "to"
     t.decimal "total"
     t.bigint "user_id"
     t.bigint "room_id"
