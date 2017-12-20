@@ -25,50 +25,5 @@
 body {
 	margin:0;
 	padding:0;
-<<<<<<< HEAD
-  // background-color: #ECEFF1;
-  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-=======
-  background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
-}
-.snowflake {
-	position: absolute;
-	display: block;
-	position: absolute;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
-	-webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	user-select: none;
-	background-image: -webkit-radial-gradient(
-		center,
-		circle farthest-corner,
-		rgba(255, 255, 255, 1) 40%,
-		rgba(255, 255, 255, 0) 100%
-	);
-	background-image: -moz-radial-gradient(
-		center,
-		circle farthest-corner,
-		rgba(255, 255, 255, 1) 40%,
-		rgba(255, 255, 255, 0) 100%
-	);
-	background-image: -ms-radial-gradient(
-		center,
-		circle farthest-corner,
-		rgba(255, 255, 255, 1) 40%,
-		rgba(255, 255, 255, 0) 100%
-	);
-	background-image: radial-gradient(
-		center,
-		circle farthest-corner,
-		rgba(255, 255, 255, 1) 40%,
-		rgba(255, 255, 255, 0) 100%
-	);
->>>>>>> csslayout
+  background-color: #ECEFF1;
 }

@@ -1,49 +1,92 @@
-<%= form_for :order, url: hotel_room_orders_path(@hotel.id,@room.id),method: :POST do |form| %>
-  <div class="field">
-    <%= form.label :form %>
-      <div class="form-group">
-        <div class='input-group date' id='datetimepicker6'>
-          <%= form.text_field :form, id: :order_form, class:'form-control' %>
-            <span class="input-group-addon">
-              <span class="glyphicon glyphicon-calendar"></span>
-            </span>
+  <%= form_for :order, url: hotel_room_orders_path(@hotel.id,@room.id),method: :POST do |form| %>
+    <div class="field">
+      <%= form.label :form %>
+        <div class="form-group">
+          <div class='input-group date' id='datetimepicker6'>
+            <%= form.text_field :form, id: :order_form, class:'form-control' %>
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
         </div>
-      </div>
-  </div>
-  <div class="field">
-    <%= form.label :form %>
-      <div class="form-group">
-        <div class='input-group date' id='datetimepicker7'>
-          <%= form.text_field :to, id: :order_to, class:'form-control' %>
-            <span class="input-group-addon">
-              <span class="glyphicon glyphicon-calendar"></span>
-            </span>
+    </div>
+    <div class="field">
+      <%= form.label :to %>
+        <div class="form-group">
+          <div class='input-group date' id='datetimepicker7'>
+            <%= form.text_field :to, id: :order_to, class:'form-control' %>
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
         </div>
-      </div>
-  </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :user_id %><br>
-    <%= form.text_field :user_id, id: :order_user_id, size: 38 %>
-  </div>
+    <div class="actions">
+      <button class="btn btn-lg btn-primary btn-block" style="margin-top:10px" type="submit">Order</button>
+    </div>
   <% end %>
+<script type="text/javascript">
+       $(document).ready(function(){
 
-  <div class="actions">
-    <button class="btn btn-lg btn-primary btn-block" style="margin-top:10px" type="submit">Create Room</button>
-  </div>
-<% end %>
+          $(".cus_order_show").click(function(){
+            var datefrom = [];
+            var dateto = [];
+            var dateorder = [];
 
-    <script type="text/javascript">
-      $(function () {
-        $('#datetimepicker6').datetimepicker();
-        $('#datetimepicker7').datetimepicker({
-          useCurrent: false //Important! See issue #1075
+            $(".cus_order_show").find("strong.form").each(function(){ datefrom.push(this.id); });
+            $(".cus_order_show").find("strong.to").each(function(){ dateto.push(this.id); });
+            var d = new Date("07/31/2014");
+            alert(d);
+            alert(dateto[0]);
+            alert(datefrom[0]-dateto[0]);
+
+            for (i = 0; i < datefrom.length; i++) { 
+                var a = dateto[i] - datefrom[i];
+  
+            }
+            alert(datefrom);
+            alert(dateto);
+
         });
-        $("#datetimepicker6").on("dp.change", function (e) {
-          $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
         });
-        $("#datetimepicker7").on("dp.change", function (e) {
-          $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+        $(function () {
+          $('#datetimepicker6').datetimepicker({format: 'DD/MM/YYYY'});
+          $('#datetimepicker7').datetimepicker({ format: 'DD/MM/YYYY',
+            useCurrent: false //Important! See issue #1075
+          });
+          $("#datetimepicker6").on("dp.change", function (e) {
+            $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+          });
+          $("#datetimepicker7").on("dp.change", function (e) {
+            $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+          });
         });
-      });
-    </script>
+        
+</script>
+<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker5'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker5').datetimepicker({
+                    
+                    disabledDates: [
+                        moment("12/25/2017"),
+                        new Date(2013, 11 - 1, 21),
+                        "11/22/2013 00:53"
+                    ]
+                });
+            });
+        </script>
+    </div>
+</div>

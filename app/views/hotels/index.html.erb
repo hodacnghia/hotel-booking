@@ -12,27 +12,27 @@
             <td>
             </td>
             <li class="row" style="margin:0px;padding:0px">
-              <div id="shout-carousel" class="carousel slide col-lg-12" data-ride="carousel" style="margin:0px;padding:0px">
+              <div id="shout-carousel<%=hotel.id%>" class="carousel slide col-lg-12" data-ride="carousel" style="margin:0px;padding:0px">
                 <div class="carousel-inner col-lg-4" style="margin:0px;padding:0px">
                   <div class="item active col-lg-12" style="margin:0px;padding:0px">
                     <%=  image_tag hotel.picture[0].url %>
                   </div>
-                  <%y = hotel.picture.count-1 %>
+                <%y = hotel.picture.count-1 %>
                     <% 1.upto(y) do |x|%>
                   <div class="item col-lg-12" style="margin:0px;padding:0px">
                         <% x%>
                           <%=  image_tag hotel.picture[x].url %>
                   </div>
-                      <% end%>
-                    <a class="left carousel-control" href="#shout-carousel" role="button" data-slide="prev" style="margin:0px;padding:0px">
-                      <span class="glyphicon glyphicon-chevron-left"></span>
-                    </a>
-                    <a class="right carousel-control" href="#shout-carousel" role="button" data-slide="next" style="margin:0px;padding:0px;">
-                      <span class="glyphicon glyphicon-chevron-right"></span>
-                    </a>
+                  <a class="left carousel-control" href="#shout-carousel<%=hotel.id%>" role="button" data-slide="prev" style="margin:0px;padding:0px">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                  </a>
+                  <a class="right carousel-control" href="#shout-carousel<%=hotel.id%>" role="button" data-slide="next" style="margin:0px;padding:0px;">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                  </a>
+                <% end%>
+
                 </div>
-              <span class="price">$2500</span>
-              <div class="property_details" style="width:100%; border:2px solid">
+              <div class="property_details" >
                 <h1>
                   <td>
                     <%= hotel.name %>

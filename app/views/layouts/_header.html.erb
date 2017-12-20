@@ -4,12 +4,11 @@
 <section class="hero">
 	<header>
 		<div class="wrapper" >
-			<%=image_tag("logo.png", :width => 200, :height => 100)%>
+			<%= link_to "#{image_tag("logo.png", :width => 200, :height => 100)}".html_safe, root_path %>
 			<a href="#" class="hamburger"></a>
 			<nav>
 				<ul>
 					<li>
-<<<<<<< HEAD
 						<% if user_signed_in? %>
             <% if current_user.hotels.nil? %>
               <%= link_to "Become a host" , new_hotel_path %>
@@ -37,7 +36,6 @@
           <%end%>
           </li>
       
-=======
 						<a href="">Home</a>
 					</li>
 					<li>
@@ -45,7 +43,6 @@
 					</li>
 					<li>
 						<a href="#">Contact</a>
->>>>>>> csslayout
 					</li>
 					
 				</ul>
