@@ -49,8 +49,24 @@
   <%= f.file_field :picture,multiple: true, id: :hotel_picture %>
   <%= f.submit "Add a new"%>
   <%end%>
-  
-
 </p>
+<%= form_for :location, url: hotel_locations_path(@hotel.id),method: :POST do |form| %>
+
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :location_address %>
+  </div>
+
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+    <div class="actions">
+  </div>
+<% end %>
+
 <%= link_to 'Show', @home_stay %> |
 <%= link_to 'Back', :back , style: "    text-decoration:none" %>

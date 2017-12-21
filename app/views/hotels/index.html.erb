@@ -1,6 +1,4 @@
-<p id="notice">
-  <%= notice %>
-</p>
+
 <h1>Hotels</h1>
 
 <section class="listings">
@@ -12,33 +10,15 @@
             <td>
             </td>
             <li class="row">
-              <div id="shout-carousel<%=hotel.id%>" class="carousel slide col-lg-12" data-ride="carousel" style="margin:0px;padding:0px">
-                <div class="carousel-inner col-lg-4" style="margin:0px;padding:0px">
-                  <div class="item active col-lg-12" style="margin:0px;padding:0px">
-                    <%=  image_tag hotel.picture[0].url %>
-                  </div>
-                <%y = hotel.picture.count-1 %>
-                    <% 1.upto(y) do |x|%>
-                  <div class="item col-lg-12" style="margin:0px;padding:0px">
-                        <% x%>
-                          <%=  image_tag hotel.picture[x].url %>
-                  </div>
-                  <a class="left carousel-control" href="#shout-carousel<%=hotel.id%>" role="button" data-slide="prev" style="margin:0px;padding:0px">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                  </a>
-                  <a class="right carousel-control" href="#shout-carousel<%=hotel.id%>" role="button" data-slide="next" style="margin:0px;padding:0px;">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                  </a>
-                <% end%>
-
-                </div>
+             <%=  image_tag hotel.picture[0].url %>
+              
               <div class="property_details" style="width:100%" >
                 <h1>
                   <td>
                     <%= hotel.name %>
                   </td>
                   <td>
-                    <%= rating_for hotel, "rate" , cancel_place: 'right' ,imdb_avg: true ,data: { turbolinks: false } %>
+                    <%= rating_for hotel, "rate" , cancel_place: 'right'  ,data: { turbolinks: false } %>
                   </td>
                 </h1>
                 <h2>
@@ -66,8 +46,7 @@
 </section>
 
 </div>
-<br>
-
+<div style="text-align: center">
 <%= will_paginate @hotels %>
+</div>
 
-  <%= link_to 'New Hotel', new_hotel_path%>
