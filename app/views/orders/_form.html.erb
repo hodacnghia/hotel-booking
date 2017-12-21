@@ -1,5 +1,5 @@
   <%= form_for :order, url: hotel_room_orders_path(@hotel.id,@room.id),method: :POST do |form| %>
-  
+
     <div class="field">
       <%= form.label :form %>
         <div class="form-group">
@@ -39,38 +39,38 @@
             $(".cus_order_show").find("strong.to").each(function(){ dateto.push(this.id); });
             var d = new Date(dateto[0]);
             var q = new Date(datefrom[0]);
-            for (var i = 0; i < datefrom.length; i++) { 
+            for (var i = 0; i < datefrom.length; i++) {
               var f = new Date(datefrom[i]);
               var t = new Date(dateto[i]);
-                
+
                 if(f.getYear() == t.getYear()){
 
                 if(f.getMonth() == t.getMonth()){
- 
+
                   if (f.getDate() == t.getDate()){
                     var tmp = (f.getMonth()+1+"/"+f.getDate()+"/"+f.getFullYear()).toString();
                     dateorder.push(tmp);
-                  } 
-                  else{ 
+                  }
+                  else{
 
                   var count = t.getDate()-f.getDate();
 
-                  for (var j = 0; j <= count ; j++) { 
+                  for (var j = 0; j <= count ; j++) {
 
                     var tmp = (f.getMonth()+1+"/"+f.getDate()+"/"+f.getFullYear()).toString();
                     dateorder.push(tmp);
 
                     f.setDate(f.getDate() + 1);
-                    
+
 
                   }
                   }
                 }
                 else{}
-              }             
+              }
             }
 
-          
+
           $('#datetimepicker6').datetimepicker({
             format: 'DD/MM/YYYY',
                     disabledDates: dateorder
