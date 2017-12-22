@@ -640,13 +640,15 @@ header nav .login_btn:hover {
 
 .listings ul li .property_details h1 {
     color: #000000;
+    text-align: center;
+    margin-top: 10px;
     font-family: "lato-bold", Helvetica, Arial, sans-serif;
     font-size: 16px!important;
     font-weight: bold;
     margin-bottom: 5px;
     line-height: 28px;
-    white-space:pre;
-    overflow:hidden;
+    // white-space:pre;
+    // overflow:hidden;
     text-overflow: ellipsis;
 
 }
