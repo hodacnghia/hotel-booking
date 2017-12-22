@@ -38,7 +38,7 @@ class CitiesController < ApplicationController
         format.html { redirect_to cities_path(@city)}
         format.json { render :show, status: :created, location: @city }
       else
-        format.html { render :new }
+        format.html { render :back }
         format.json { render json: @city.errors, status: :unprocessable_entity }
       end
     end

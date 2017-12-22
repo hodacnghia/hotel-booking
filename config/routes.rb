@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'my_hotel/index' , :as => 'my_hotel'
 
 
@@ -24,11 +25,6 @@ Rails.application.routes.draw do
   end
 
 
-
-
-  scope "/admin" do
-    resources :users
-  end
 
   resources :roles
 

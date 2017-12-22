@@ -31,6 +31,8 @@ class Ability
     user ||= User.new
     def initialize(user)
       if user.try(:admin?)
+        can :dashboard
+        can :access, :rails_admin
         can :manage, :all
       elsif user.try(:regular?)
         can :read, :all
