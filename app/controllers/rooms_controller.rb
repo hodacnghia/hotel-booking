@@ -39,7 +39,7 @@ class RoomsController < ApplicationController
         format.html { redirect_to hotel_path(@hotel)}
         format.json { render :show, status: :created, location: @room }
       else
-        format.html { render :new }
+        format.html { redirect_to hotel_path(@hotel), notice: 'Room was successfully created.' }
         format.json { render json: @room.errors, status: :unprocessable_entity }
       end
     end

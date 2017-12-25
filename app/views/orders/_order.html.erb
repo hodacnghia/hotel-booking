@@ -1,9 +1,10 @@
-  <p class="cus_order_show col-lg-2 " id="cus_order_show">
-    <strong>User:</strong>
-    <%= order.user.email %>
+<p style="background-color:white; margin:0 15px 30px 15px;" class="cus_order_show col-sm-2 " id="cus_order_show">
 
-    <strong id="<%= order.form%>" class="form">Form:</strong>
-    <%= order.form%><br>
-    <strong id="<%= order.to %>" class="to">To:</strong>
-    <%= order.to %>
-  </p>
+  <strong>User:</strong>
+  <%=order.user.name %><br>
+
+  <strong id="<%= order.form%>" class="form">Form:</strong>
+  <%= order.form%><br>
+  <strong id="<%= order.to %>" class="to">To:</strong>
+  <%= order.to %>
+</p>

@@ -1,38 +1,52 @@
 <p id="notice"><%= notice %></p>
-<h1>Hotels</h1>
+<h1>Dash Board</h1>
 <section class="listings">
-<div class="wrapper">
-  <ul class="properties_list">
-      <% @hotels.each do |hotel| %>
-      <tr>
-      <td>
-      </td>
-      <li>
-      <a href="#">
-        <%hotel.picture.each do |image|%>
-        <%=  image_tag image.url %>
-        <% end%>
-      </a>
-      <span class="price">$2500</span>
-      <div class="property_details">
-        <h1>
-        <td><%= hotel.name %></td>
-        <td><%= rating_for hotel, "rate" , cancel_place: 'right' ,imdb_avg: true ,data: { turbolinks: false } %></td>
-        </h1>
-        <h2><td><%= hotel.description %></td> <span class="property_size"></span></h2>
-        <td><%= hotel.user.name %></td>
-        <td><%= link_to 'Show', hotel %></td>
-        <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
-        <td><%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </div>
-    </li>
-    </tr>
-  <% end %>
-</ul>
-<a href="#" class="more_listing_btn">View More Listings</a>
-</div>
+  <div id="large-header" class="large-header">
+    <div class="wrapper">
+      <ul class="properties_list">
+        <% @hotels.each do |hotel| %>
+          <tr>
+            <td>
+            </td>
+            <li class="row">
+             <%=  image_tag hotel.picture[0].url %>
+              
+              <div class="property_details" style="width:100%" >
+                <h1>
+                  <td>
+                    <%= hotel.name %>
+                  </td>
+                  <td>
+                    <%= rating_for hotel, "rate" , cancel_place: 'right'  ,data: { turbolinks: false } %>
+                  </td>
+                </h1>
+                <h2>
+                  <td>
+                    <%= hotel.description %>
+                  </td>
+                  <span class="property_size"></span>
+                </h2>
+                <td>
+                  <%= hotel.user.name %>
+                </td>
+                <td>
+                  <%= link_to 'Show', hotel %>
+                  <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
+                  <td><%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </td>
+              </div>
+            </li>
+
+
+            <!-- Controls -->
+
+            <% end %>
+      </ul>
+
+    </div>
 </section>
-<br>
-<br>
+
+</div>
+<div style="text-align: center">
 <%= will_paginate @hotels %>
-<%= link_to 'New Hotel', new_hotel_path %>
+</div>

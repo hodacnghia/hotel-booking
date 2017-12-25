@@ -1,7 +1,3 @@
-<p id="notice">
-  <%= notice %>
-</p>
-<h1>Hotels</h1>
 
 <section class="listings">
   <div id="large-header" class="large-header">
@@ -11,33 +7,32 @@
           <tr>
             <td></td>
             <li class="row">
-              <div id="shout-carousel<%=hotel.id%>" class="carousel slide col-lg-12" data-ride="carousel" style="margin:0px;padding:0px">
-                <%= image_tag hotel.picture[0].url %>
-                  <div class="property_details" style="width:100%;">
-                    <h1>
-                      <td style="margin-top:-100px;">
-                        <%= hotel.name%>
-                      </td>
-                      <td>
-                        <%= rating_for hotel, "rate" , cancel_place: 'right' ,imdb_avg: true ,data: { turbolinks: false } %>
-                      </td>
-                    </h1>
-                    <h2>
-                      <td>
-                        <%= hotel.description %>
-                      </td>
-                      <span class="property_size"></span>
+             <%=  image_tag hotel.picture[0].url %>
 
-                    </h2>
-                    <td>
-                      <%= hotel.user.name %>
-                    </td>
-                    <td>
-                      <%= link_to 'Show', hotel %>
-                    </td>
-                  </div>
-                </div>
-              </li>
+              <div class="property_details" style="width:100%" >
+                <h1>
+                  <td>
+                    <%= hotel.name %>
+                  </td>
+                  <td>
+                    <%= rating_for hotel, "rate" , cancel_place: 'right'  ,data: { turbolinks: false } %>
+                  </td>
+                </h1>
+                <h2>
+                  <td>
+                    <%= hotel.description %>
+                  </td>
+                  <span class="property_size"></span>
+                </h2>
+                <td>
+                  <%= hotel.user.name %>
+                </td>
+                <td>
+                  <%= link_to 'Show', hotel %>
+                </td>
+              </div>
+            </li>
+
 
               <!-- Controls -->
 
@@ -47,9 +42,7 @@
         </div>
       </section>
 
-    </div>
-    <br>
-
-    <%= will_paginate @hotels %>
-
-    <%= link_to 'New Hotel', new_hotel_path%>
+</div>
+<div style="text-align: center">
+<%= will_paginate @hotels %>
+</div>

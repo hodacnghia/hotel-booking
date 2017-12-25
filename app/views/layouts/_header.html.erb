@@ -14,18 +14,11 @@
               <%= link_to "Become a host" , new_hotel_path %>
             <% else %>
               <%= link_to "Add a new list" , new_hotel_path %>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Host 
-                <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <%= link_to "Hosting dasboard", my_hotel_path %>
+							                <li>
+                  <%= link_to "My Hotels", my_hotel_path %>
                 </li>
-                <li>
-                  <%= link_to "Stats", '#' %>
-                </li>
+
+
  
 
               </ul>
@@ -33,23 +26,12 @@
                  <%end%>
           <% else %>
             <%= link_to "Become a host" , new_user_session_path %>
-          <%end%>
-          </li>
-      
-						<a href="">Home</a>
-					</li>
-					<li>
-						<a href="#">About</a>
-					</li>
-					<li>
-						<a href="#">Contact</a>
-					</li>
-					
+          <%end%>					
 				</ul>
 				<ul>
 					<% if user_signed_in? %>
 
-						<li></i><%= link_to "Profile", '#' %></li>
+
 					 	<li></i><%= link_to "Settings", edit_user_registration_path %></li>
 						<li></i><%= link_to "Log out", destroy_user_session_path ,method: :delete%></li>
 

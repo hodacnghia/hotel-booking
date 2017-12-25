@@ -46,7 +46,7 @@ class OrdersController < ApplicationController
         format.html { redirect_to hotel_room_path(@room.hotel_id,@room.id)}
         format.json { render :show, status: :created, location: @order }
       else
-        format.html { render :new }
+        format.html { redirect_to hotel_room_path(@room.hotel_id,@room.id), notice: 'Order not null' }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end

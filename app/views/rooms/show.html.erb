@@ -26,7 +26,7 @@
 
   <div class="col-lg-3" id="add_order" >
     <div>
-      <% if can? :update, @hotel %>
+      <% if user_signed_in? %>
         <hr class="omb_hrOr">
         <div id="cus_addroom">
           <h2 style="text-align:center">ORDER</h2>
