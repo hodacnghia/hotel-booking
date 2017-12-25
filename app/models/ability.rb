@@ -1,5 +1,6 @@
 class Ability
   include CanCan::Ability
+  user ||= User.new
 
   def initialize(user)
     # Define abilities for the passed in user here. For example:
@@ -28,31 +29,27 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-    user ||= User.new
 
-      if user.try(:admin?)
-        can :dashboard
-        can :access, :rails_admin
-        can :manage, :all
-      elsif user.try(:regular?)
-        can :read, :all
-        can :create, Hotel
-        can :update, Hotel do |hotel|
-          hotel.try(:user) == user
-        end
-        can :destroy, Hotel do |hotel|
-          hotel.try(:user) == user
-        end
-        can :create, Order
-        can :update, Order do |order|
-          order.try(:user) == user
-        end
-      else
-        can :read, Hotel
-        can :read, City
-     
-
+    if user.try(:admin?)
+      can :dashboard
+      can :access, :rails_admin
+      can :manage, :all
+    elsif user.try(:regular?)
+      can :read, :all
+      can :create, Hotel
+      can :update, Hotel do |hotel|
+        hotel.try(:user) == user
       end
-
+      can :destroy, Hotel do |hotel|
+        hotel.try(:user) == user
+      end
+      can :create, Order
+      can :update, Order do |order|
+        order.try(:user) == user
+      end
+    else
+      can :read, Hotel
+      can :read, City
+    end
   end
 end

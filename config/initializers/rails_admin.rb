@@ -2,6 +2,7 @@
 RailsAdmin.config do |config|
   config.parent_controller = 'ApplicationController' 
   config.main_app_name = ["Admin Dashboard"]
+
   ### Popular gems integration
 
   ## == Devise ==

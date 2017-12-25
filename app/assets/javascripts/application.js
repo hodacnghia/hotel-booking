@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery.raty
+//= require ckeditor/init
 //= require ratyrate
 //= require rails-ujs
 //= require turbolinks
