@@ -29,7 +29,7 @@ class Ability
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
     user ||= User.new
-    def initialize(user)
+
       if user.try(:admin?)
         can :dashboard
         can :access, :rails_admin
@@ -37,8 +37,6 @@ class Ability
       elsif user.try(:regular?)
         can :read, :all
         can :create, Hotel
-        can :read, City
-
         can :update, Hotel do |hotel|
           hotel.try(:user) == user
         end
@@ -55,6 +53,6 @@ class Ability
      
 
       end
-    end
+
   end
 end

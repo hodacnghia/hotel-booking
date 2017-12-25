@@ -10,11 +10,18 @@
 				<ul>
 					<li>
 						<% if user_signed_in? %>
+					
+						<% if current_user.try(:admin?) %>
+							
+              <%= link_to "Admin" , rails_admin_path %>
+							  </li>
+						<%end%>
+							<li>
             <% if current_user.hotels.nil? %>
               <%= link_to "Become a host" , new_hotel_path %>
             <% else %>
               <%= link_to "Add a new list" , new_hotel_path %>
-							                <li>
+							  <li>
                   <%= link_to "My Hotels", my_hotel_path %>
                 </li>
 

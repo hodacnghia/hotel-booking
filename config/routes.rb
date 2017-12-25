@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'my_hotel/index' , :as => 'my_hotel'
-
-
   resources :locations
-  post '/rate' => 'rater#create', :as => 'rate'
   resources :cities
+  post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :hotels do
