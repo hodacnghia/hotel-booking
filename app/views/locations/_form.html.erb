@@ -1,3 +1,4 @@
+<div class="panel-body">
 <%= form_for :location, url: hotel_locations_path(@hotel.id),method: :POST do |form| %>
   <% if location.errors.any? %>
     <div id="error_explanation">
@@ -11,18 +12,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address, id: :location_address %>
-  </div>
+<%= form.text_field :address, id: :location_address, class:"form-control" %>
+<button class="btn btn-lg btn-primary col-sm-12" style="margin-top:20px" type="submit">ADD</button>
 
 
 
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-    <div class="actions">
-    <%= link_to 'Skip', hotel_path(@hotel) %>
-  </div>
+<div style= "text-align:center">
+    <%= link_to 'Skip', hotel_path(@hotel) , style: "text-align:center"%>
+</div>
 <% end %>
+</div>
