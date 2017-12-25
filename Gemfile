@@ -51,7 +51,9 @@ gem 'bootstrap-will_paginate'
 gem 'textacular'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
-gem 'bootstrap-datepicker-rails'
+gem 'rails_admin'
+gem 'ckeditor'
+
 # Use Capistrano for deployment
 
 #Send mail

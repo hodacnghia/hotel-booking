@@ -19,9 +19,15 @@
       <p>
                     <div id="shout-carousel<%=@hotel.id%>" class="carousel slide col-lg-12" data-ride="carousel" style="margin:0px;padding:0px">
                 <div class="carousel-inner col-lg-4" style="margin:0px;padding:0px">
+                <%if @hotel.picture[0] == nil%>
+                  <div class="item active col-lg-12" style="margin:0px;padding:0px">
+                    <%=  image_tag "no_image_available.jpg" %>
+                  </div>
+                <%else%>
                   <div class="item active col-lg-12" style="margin:0px;padding:0px">
                     <%=  image_tag @hotel.picture[0].url %>
                   </div>
+                <%end%>
                 <%y = @hotel.picture.count-1 %>
                     <% 1.upto(y) do |x|%>
                   <div class="item col-lg-12" style="margin:0px;padding:0px">

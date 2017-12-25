@@ -5,6 +5,8 @@ class Hotel < ApplicationRecord
   has_one :location
   mount_uploaders :picture, PictureUploader
   validate  :picture_size
+  validates :name ,:description , presence: true
+
   ratyrate_rateable 'rate'
   include PgSearch
   PgSearch.unaccent_function = "my_unaccent"

@@ -7,8 +7,12 @@
           <tr>
             <td></td>
             <li class="row">
+                         <%if hotel.picture[0] == nil%>
+                         <%=  image_tag "no_image_available.jpg" %>
+            <%else%>
              <%=  image_tag hotel.picture[0].url %>
-
+              <%end%>
+              
               <div class="property_details" style="width:100%" >
                 <h1>
                   <td>
