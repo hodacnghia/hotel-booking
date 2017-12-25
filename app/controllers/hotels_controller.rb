@@ -1,5 +1,5 @@
 class HotelsController < ApplicationController
-  
+  load_and_authorize_resource
   before_action :authenticate_user!, except: [:index, :show]
   # GET /hotels
   # GET /hotels.json
@@ -46,8 +46,10 @@ class HotelsController < ApplicationController
         redirect_to new_hotel_location_path(@hotel.id)
 
       else
+        respond_to do |format|
         format.html { redirect_to @hotel, notice: 'Hotel was not successfully create.' }
         format.json { render json: @hotel.errors, status: :unprocessable_entity }
+        end
       end
 
   end
@@ -71,7 +73,7 @@ class HotelsController < ApplicationController
   def destroy
     @hotel.destroy
     respond_to do |format|
-      format.html { redirect_to hotels_url, notice: 'Hotel was successfully destroyed.' }
+      format.html { redirect_to my_hotel_url, notice: 'Hotel was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -4,7 +4,7 @@
       <%= form.label :form %>
         <div class="form-group">
           <div class='input-group date' id='datetimepicker6'>
-            <%= form.text_field :form, id: :order_form, class:'form-control' %>
+            <%= form.text_field :form, id: :order_form, class:'form-control', id:'datefrom' %>
               <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
               </span>
@@ -15,7 +15,7 @@
       <%= form.label :to %>
         <div class="form-group">
           <div class='input-group date' id='datetimepicker7'>
-            <%= form.text_field :to, id: :order_to, class:'form-control' %>
+            <%= form.text_field :to, id: :order_to, class:'form-control1', id: 'dateto' %>
               <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
               </span>
@@ -29,8 +29,25 @@
   <% end %>
 
 <script type="text/javascript">
+   Date.prototype.addDays = function(days) {
+       var dat = new Date(this.valueOf())
+       dat.setDate(dat.getDate() + days);
+       return dat;
+   }
+
+   function getDates(startDate, stopDate) {
+      var dateArray = new Array();
+      var currentDate = startDate;
+      while (currentDate <= stopDate) {
+        dateArray.push(currentDate)
+        currentDate = currentDate.addDays(1);
+      }
+      return dateArray;
+    }
        $(document).ready(function(){
-            
+         var today = new Date();
+         
+
             var datefrom = [];
             var dateto = [];
             var dateorder = [];
@@ -38,15 +55,18 @@
             $(".cus_order_show").find("strong.form").each(function(){ datefrom.push(this.id); });
             $(".cus_order_show").find("strong.to").each(function(){ dateto.push(this.id); });
             var d = new Date(dateto[0]);
+
             var q = new Date(datefrom[0]);
             for (var i = 0; i < datefrom.length; i++) {
               var f = new Date(datefrom[i]);
               var t = new Date(dateto[i]);
-
-                if(f.getYear() == t.getYear()){
+              var dateArray = getDates(f, t);
+              dateorder =dateorder.concat(dateArray);
+                <%# if(f.getYear() == t.getYear()){
 
                 if(f.getMonth() == t.getMonth()){
-
+                    alert(f.getMonth());
+                    alert(t.getMonth());
                   if (f.getDate() == t.getDate()){
                     var tmp = (f.getMonth()+1+"/"+f.getDate()+"/"+f.getFullYear()).toString();
                     dateorder.push(tmp);
@@ -66,18 +86,23 @@
                   }
                   }
                 }
-                else{}
-              }
+                else{
+                  var count = t.getMonth()-f.getMonth();
+                  alert(t.getMonth());
+                }
+              } %>
             }
 
-
           $('#datetimepicker6').datetimepicker({
-            format: 'DD/MM/YYYY',
+            useCurrent: false ,
+            minDate: today,
+            format: 'YYYY/MM/DD',
                     disabledDates: dateorder
             });
           $('#datetimepicker7').datetimepicker({ 
             useCurrent: false ,//Important! See issue #1075
-           format: 'DD/MM/YYYY',
+            minDate: today,
+            format: 'YYYY/MM/DD',
                     disabledDates: dateorder
             });
           $("#datetimepicker6").on("dp.change", function (e) {
@@ -87,6 +112,21 @@
             $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
           });
 
+          $("#order-btn").click(function(e){
+          var orderfrom = new Date(document.getElementById("datefrom").value);
+          var orderto = new Date(document.getElementById("dateto").value);
+        $.each(dateorder , function (index, value){
+          if(orderfrom < value && orderto > value){
+            e.preventDefault();
+            alert("Phòng đã bị đặt trong khoảng thời gian ");
+            return false;
+
+          }
+        });
+        
+
+
+          });
                 });
 
 </script>

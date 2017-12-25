@@ -39,7 +39,7 @@
       <button class="btn btn-lg btn-primary col-sm-12" style="margin-top:20px" type="submit">Add File</button><br>
       <%end%>
       <%= form_for :location, url: hotel_locations_path(@hotel.id),method: :POST do |form| %>
-      <label>Location</label><%= form.text_field :address, id: :location_address, class:"form-control" %>
+      <label>Address</label><%= form.text_field :address, id: :location_address, class:"form-control" %>
       <button class="btn btn-lg btn-primary col-sm-12" style="margin-top:20px" type="submit">ADD</button>
       <% end %>
       <div class="col-sm-12" style="padding:20px 0 10px 0">
