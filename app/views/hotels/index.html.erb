@@ -22,16 +22,8 @@
                     <%= rating_for hotel, "rate" , cancel_place: 'right'  ,data: { turbolinks: false } %>
                   </td>
                 </h1>
-                <h2>
-                  <td>
-                   
-                    <%= hotel.description.html_safe %>
-                  </td>
-                  <span class="property_size"></span>
-                </h2>
-                <td>
-                  <%= hotel.user.name %>
-                </td>
+               
+    
                 <td>
                   <%= link_to 'Show', hotel %>
                 </td>
@@ -50,4 +42,53 @@
 </div>
 <div style="text-align: center">
 <%= will_paginate @hotels %>
+</div>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="footer" id="footer" style="padding-bottom : 40px">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                <ul>
+                    <li> <a href="cities/1"> Hồ Chí Minh </a> </li>
+                    <li> <a href="cities/2"> Hà Nội </a> </li>
+                    <li> <a href="cities/3"> Huế </a> </li>
+                    
+                </ul>
+            </div>
+            <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                <ul>
+                    <li> <a href="cities/4"> Đà Lạt </a> </li>
+                    <li> <a href="cities/5"> Nha Trang </a> </li>
+                    <li> <a href="cities/6"> Đà Nẵng </a> </li>
+                </ul>
+            </div>
+            <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                <ul>
+                    <li> <a href="cities/7"> Hải Phòng </a> </li>
+                    <li> <a href="cities/8"> Vũng Tàu </a> </li>
+                    <li> <a href="cities/9"> Tiền Giang </a> </li>
+                </ul>
+            </div>
+            <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                <ul>
+                    <li> <a href="cities/10"> Tây Ninh </a> </li>
+                    <li> <a href="cities/11"> Quy Nhơn </a> </li>
+                    <li> <a href="cities/12"> Bình Định </a> </li>
+                </ul> 
+            </div>
+            <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                
+                <ul class="social">
+                    <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
+                    <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
+                    <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
+                    <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
+                    <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
+                </ul>
+            </div>
+        </div>
+        <!--/.row--> 
+    </div>
+    <!--/.container--> 
 </div>

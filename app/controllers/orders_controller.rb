@@ -45,7 +45,6 @@ class OrdersController < ApplicationController
 
         format.html { redirect_to hotel_room_path(@room.hotel_id,@room.id)}
         format.json { render :show, status: :created, location: @order }
-        UserMailer.welcome_email(@user).deliver_now
 
       else
         format.html { redirect_to hotel_room_path(@room.hotel_id,@room.id), notice: 'Order not null' }

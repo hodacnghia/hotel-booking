@@ -4,6 +4,7 @@ class HotelsController < ApplicationController
   # GET /hotels
   # GET /hotels.json
   def index
+    @cities = City.all
     if params[:term]
       @hotels = Hotel.whose_name_starts_with(params[:term]).paginate(page: params[:page], per_page: 3)
     else

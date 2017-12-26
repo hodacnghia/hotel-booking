@@ -8,6 +8,51 @@
   <strong>Description:</strong>
   <%= @city.description %>
 </p>
+<%if  @hotels != "None"%>
+<section class="listings">
+<div id="large-header" class="large-header">
+  <div class="wrapper">
+    <ul class="properties_list">
+      <% @hotels.each do |hotel| %>
+        <tr>
+          <td></td>
+          <li class="row">
+                       <%if hotel.picture[0] == nil%>
+                       <%=  image_tag "no_image_available.jpg" %>
+          <%else%>
+           <%=  image_tag hotel.picture[0].url %>
+            <%end%>
+            
+            <div class="property_details" style="width:100%" >
+              <h1>
+                <td>
+                  <%= hotel.name %>
+                </td>
+                <td>
+                  <%= rating_for hotel, "rate" , cancel_place: 'right'  ,data: { turbolinks: false } %>
+                </td>
+              </h1>
+             
+  
+              <td>
+                <%= link_to 'Show', hotel %>
+              </td>
+            </div>
+          </li>
 
+
+            <!-- Controls -->
+
+          <% end %>
+        </ul>
+
+      </div>
+    </section>
+
+</div>
+<div style="text-align: center">
+<%= will_paginate @hotels %>
+</div>
+<%end%>
 <%= link_to 'Edit', edit_city_path(@city) %> |
 <%= link_to 'Back', cities_path %>

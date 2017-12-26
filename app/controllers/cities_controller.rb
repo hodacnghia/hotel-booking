@@ -10,13 +10,17 @@ class CitiesController < ApplicationController
   # GET /cities/1
   # GET /cities/1.json
   def show
-    # if @city.hotel.count == 0
-    #   @assosciated_home_stay = "None"
+    if @city.hotels.count == 0
+      @hotels = "None"
+    else
+      @hotels = @city.hotels.paginate(page: params[:page], per_page: 3)
+    
+    end
+    # if params[:term]
+    #   @hotels = Hotel.whose_name_starts_with(params[:term]).paginate(page: params[:page], per_page: 3)
     # else
-    #   @assosciated_home_stay = @city.hotels
-    #
+    #   @hotels = Hotel.all.paginate(page: params[:page], per_page: 3)
     # end
-
   end
 
   # GET /cities/new

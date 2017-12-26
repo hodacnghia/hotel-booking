@@ -23,15 +23,7 @@
                     <%= rating_for hotel, "rate" , cancel_place: 'right'  ,data: { turbolinks: false } %>
                   </td>
                 </h1>
-                <h2>
-                  <td>
-                    <%= hotel.description.html_safe %>
-                  </td>
-                  <span class="property_size"></span>
-                </h2>
-                <td>
-                  <%= hotel.user.name %>
-                </td>
+            
                 <td>
                   <%= link_to 'Show', hotel %>
                   <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>

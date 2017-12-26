@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :hotels do
     resources :rooms do
-      resources :orders
+      resources :orders, :except => [:index]
     end
     resources :locations
 
