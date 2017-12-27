@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:show]
-  before_action :status_room
+  before_action :status_room, except: [:edit, :destroy]
   # GET /rooms
   # GET /rooms.json
   def index
