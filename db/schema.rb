@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20171225190755) do
     t.string "name"
     t.text "description"
     t.bigint "user_id"
+    t.boolean "status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "picture", default: [], array: true

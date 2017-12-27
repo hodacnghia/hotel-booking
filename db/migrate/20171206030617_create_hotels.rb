@@ -5,7 +5,8 @@ class CreateHotels < ActiveRecord::Migration[5.1]
       t.string :name
       t.text :description
       t.belongs_to :user, foreign_key: true
-
+      t.boolean :status, default: false
+      
       t.timestamps
     end
   end

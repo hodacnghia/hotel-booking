@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:show]
-  before_action :status_room, except: [:edit, :destroy]
+  before_action :status_room, except: [:edit,:create, :destroy]
   # GET /rooms
   # GET /rooms.json
   def index
@@ -39,7 +39,7 @@ class RoomsController < ApplicationController
         format.html { redirect_to hotel_path(@hotel)}
         format.json { render :show, status: :created, location: @room }
       else
-        format.html { redirect_to hotel_path(@hotel), notice: 'Room was successfully created.' }
+        format.html { redirect_to hotel_path(@hotel), notice: 'Room not successfully created.' }
         format.json { render json: @room.errors, status: :unprocessable_entity }
       end
     end
