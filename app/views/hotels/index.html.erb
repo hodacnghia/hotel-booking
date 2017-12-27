@@ -4,6 +4,7 @@
     <div class="wrapper">
       <ul class="properties_list">
         <% @hotels.each do |hotel| %>
+        <%if hotel.status == true%>
           <tr>
             <td></td>
             <li class="row">
@@ -32,11 +33,13 @@
 
 
               <!-- Controls -->
-
+    <% end %>
             <% end %>
           </ul>
 
         </div>
+
+
       </section>
 
 </div>

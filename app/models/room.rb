@@ -4,13 +4,17 @@ class Room < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :users , :through => :orders
   validates :status , default: false
-
-
-  def self.date_order
-    dateordered = []
-    self.orders.each do |order|
-      dateordered += order.from
-      
+  after_create :hotel_status
+  after_destroy :hotel_empty
+  
+  def hotel_status
+    self.hotel.update_attributes(:status => true)
+  end
+  def hotel_empty
+    if self.hotel.rooms.empty?
+    self.hotel.update_attributes(:status => false)
     end
+  end
+
 end
-end
+
