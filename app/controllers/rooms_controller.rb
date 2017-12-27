@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:show]
-
+  before_action :status_room
   # GET /rooms
   # GET /rooms.json
   def index
@@ -52,7 +52,7 @@ class RoomsController < ApplicationController
     @room = @hotel.rooms.find(params[:id])
     respond_to do |format|
       if @room.update(room_params)
-        format.html { redirect_to root}
+        format.html { redirect_to hotel_path(@hotel)}
         format.json { render :show, status: :ok, location: @room }
       else
         format.html { render :edit }
@@ -78,7 +78,18 @@ class RoomsController < ApplicationController
     def set_room
       @room = Room.find(params[:id])
     end
+    def status_room
+      @hotel = Hotel.find(params[:hotel_id])
+      @room = Room.find(params[:id])
+      if @room.status == true
+        respond_to do |format|
 
+          format.html { redirect_to hotel_path(@hotel)}
+          format.json {render json: @room.errors, status: :unprocessable_entity}
+        end
+      end
+    end
+  
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
       params.require(:room).permit(:type_id, :hotel_id,:price, :bed, :status)

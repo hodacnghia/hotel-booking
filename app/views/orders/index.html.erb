@@ -1,32 +1,30 @@
 
-<h1>Orders</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Form</th>
-      <th>To</th>
-      <th>User</th>
-      <th>Room</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @orders.each do |order| %>
-      <tr></tr>
-        <td><%= order.form %></td>
-        <td><%= order.to %></td>
-        <td><%= order.user.name %></td>
-        <td><%= order.room %></td>
-        <td><%#= link_to 'Show', hotel_room_order(@hotel.id , @room.id, order) %></td>
-        <td><%#= link_to 'Edit', edit_hotel_room_order_path(order) %></td>
-        <td><%#= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="container">
+    <div class="row col-md-12 col-md-offset-0 custyle">
+      <h1>My Orders</h1>
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Form</th>
+            <th>To</th>
+            <th>User</th>
+            <th>Hotel</th>
+            <th>Room</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <% current_user.orders.each do |order| %>
+            <tr>
+                 <td><%= order.form %></td>
+                  <td><%= order.to %></td>
+                  <td><%= order.user.name %></td>
+                  <td><%= order.room.hotel.name %></td>
+                  <td><%= order.room.type.name %></td>
+                  <td><%= order.total %></td>
+                
+            </tr>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Order', new_hotel_room_order_path %>
+    </table>
+    </div>
+</div>

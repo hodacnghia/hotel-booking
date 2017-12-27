@@ -6,7 +6,6 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
   end
 
   # GET /orders/1
@@ -39,6 +38,8 @@ class OrdersController < ApplicationController
     @order = @room.orders.create(order_params)
     @order.user_id = current_user.id
 
+    @order.total = @room.price * ( @order.to - @order.form + 1 ) 
+  
     respond_to do |format|
       if @order.save
 
@@ -79,9 +80,7 @@ class OrdersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_order
-      @order = Order.find(params[:id])
-    end
+
     def set_order
       @order = Order.find(params[:id])
     end
