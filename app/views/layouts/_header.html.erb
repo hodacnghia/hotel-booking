@@ -17,30 +17,32 @@
 							  </li>
 						<%end%>
 							<li>
-            <% if current_user.hotels.nil? %>
+            <% if current_user.hotels.empty? %>
               <%= link_to "Become a host" , new_hotel_path %>
             <% else %>
               <%= link_to "Add a new list" , new_hotel_path %>
 							  <li>
                   <%= link_to "My Hotels", my_hotel_path %>
                 </li>
-							  <li>
-                  <%= link_to "My Order", orders_path %>
-                </li>
+
 
  
 
               </ul>
             </li>
-                 <%end%>
+            <%end%>
           <% else %>
             <%= link_to "Become a host" , new_user_session_path %>
-          <%end%>					
+          <%end%>			
+
 				</ul>
+				
 				<ul>
 					<% if user_signed_in? %>
 
-
+												  <li>
+                  <%= link_to "My Order", orders_path %>
+                </li>		
 					 	<li></i><%= link_to "Settings", edit_user_registration_path %></li>
 						<li></i><%= link_to "Log out", destroy_user_session_path ,method: :delete%></li>
 
