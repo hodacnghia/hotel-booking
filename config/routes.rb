@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :cities
   post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-
   resources :hotels do
     resources :rooms do
       resources :orders, :except => [:index]
@@ -21,7 +20,7 @@ Rails.application.routes.draw do
     
 
   end
-  resources :orders, :only => [:index]
+  resources :orders, :only => [:index, :destroy]
 
   resources :roles
 

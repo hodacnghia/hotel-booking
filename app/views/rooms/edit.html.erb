@@ -14,6 +14,11 @@
     <%= form.check_box :status, id: :room_status %>
   </p>
   <p>
+    <p>
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :room_price %>
+  </p>
+  <p>
     <%= form.submit %>
   </p>
 <% end %>

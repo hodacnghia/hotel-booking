@@ -1,76 +1,107 @@
-<div class="body_hotel">
-  <div class="col-xs-4 col-sm-9" id="cus_rooms" style="padding-left:40px">
-    <%= render @hotel.rooms %>
-  </div>
-  <div class="col-xs-4 col-sm-3" id="cus_showhotel">
-    <div id="cus_hotel">
-      <p>
-        <h1><%= @hotel.name %></h1>
-      </p>
 
-      <p>
-        <strong>Description:</strong>
-        <%= @hotel.description.html_safe %>
-      </p>
-      <p>
-        <strong>User:</strong>
-        <%= @hotel.user.name %>
-      </p>
-      <p>
-                    <div id="shout-carousel<%=@hotel.id%>" class="carousel slide col-lg-12" data-ride="carousel" style="margin:0px;padding:0px">
-                <div class="carousel-inner col-lg-4" style="margin:0px;padding:0px">
-                <%if @hotel.picture[0] == nil%>
-                  <div class="item active col-lg-12" style="margin:0px;padding:0px">
-                    <%=  image_tag "no_image_available.jpg" %>
+    <div class="container">
+
+      <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+
+
+        <div class="lead" id="cus_rooms" >
+          <%= render @hotel.rooms %>
+        </div>
+          
+
+   
+
+        </div>
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+            
+
+
+          <!-- Search Widget -->
+          <div class="card my-4">
+            <div class="card-body">
+              <div class="input-group">
+                  <div class="" id="cus_showhotel">
+                    <div id="cus_hotel">
+                      <p></p>
+                        <h1><%= @hotel.name %></h1>
+                      </p>
+
+                      <p>
+                        <strong>Description:</strong>
+                        <%= @hotel.description.html_safe %>
+                      </p>
+                      <p>
+                        <strong>User:</strong>
+                        <%= @hotel.user.name %>
+                      </p>
+                      <p>
+                                    <div id="shout-carousel<%=@hotel.id%>" class="carousel slide col-lg-12" data-ride="carousel" style="margin:0px;padding:0px">
+                                <div class="carousel-inner col-lg-4" style="margin:0px;padding:0px">
+                                <%if @hotel.picture[0] == nil%>
+                                  <div class="item active col-lg-12" style="margin:0px;padding:0px">
+                                    <%=  image_tag "no_image_available.jpg" %>
+                                  </div>
+                                <%else%>
+                                  <div class="item active col-lg-12" style="margin:0px;padding:0px">
+                                    <%=  image_tag @hotel.picture[0].url %>
+                                  </div>
+                                <%end%>
+                                <%y = @hotel.picture.count-1 %>
+                                    <% 1.upto(y) do |x|%>
+                                  <div class="item col-lg-12" style="margin:0px;padding:0px">
+                                        <% x%>
+                                          <%=  image_tag @hotel.picture[x].url %>
+                                  </div>
+                                  <a class="left carousel-control" href="#shout-carousel<%=@hotel.id%>" role="button" data-slide="prev" style="margin:0px;padding:0px">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                  </a>
+                                  <a class="right carousel-control" href="#shout-carousel<%=@hotel.id%>" role="button" data-slide="next" style="margin:0px;padding:0px;">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                  </a>
+                                <% end%>
+
+                              </div>
+                            </div>
+
+                      </p>
+
+                      <%if @hotel.location != nil %>
+                      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@hotel.location.latitude}%2C#{@hotel.location.longitude}" %>
+                      <%end%>
+                    </div>
+                    <div>
+                      <% if can? :update, @hotel %>
+                        <hr class="omb_hrOr">
+                        <div id="cus_addroom">
+                          <h2>ADD A ROOM</h2>
+                          <%= render 'rooms/form' %>
+                        <% end %>
+                      </div>
+                      <% if can? :update, @hotel %>
+                        <div class="col-sm-6" style="padding:20px 5px 50px 0">
+                          <%= link_to 'Edit', edit_hotel_path(@hotel), class:"btn btn-lg btn-success btn-block" %>
+                        </div>
+                        <div class="col-sm-6" style="padding:20px 0 50px 5px">
+                          <%= link_to 'Back', hotels_path, class:"btn btn-lg btn-warning btn-block" %>
+                        </div>
+                      <% else %>
+                        <div class="col-sm-12" style="padding:20px 0 50px 5px">
+                          <%= link_to 'Back', hotels_path, class:"btn btn-lg btn-warning btn-block" %>
+                        </div>
+                      <% end %>
+                    </div>
                   </div>
-                <%else%>
-                  <div class="item active col-lg-12" style="margin:0px;padding:0px">
-                    <%=  image_tag @hotel.picture[0].url %>
-                  </div>
-                <%end%>
-                <%y = @hotel.picture.count-1 %>
-                    <% 1.upto(y) do |x|%>
-                  <div class="item col-lg-12" style="margin:0px;padding:0px">
-                        <% x%>
-                          <%=  image_tag @hotel.picture[x].url %>
-                  </div>
-                  <a class="left carousel-control" href="#shout-carousel<%=@hotel.id%>" role="button" data-slide="prev" style="margin:0px;padding:0px">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                  </a>
-                  <a class="right carousel-control" href="#shout-carousel<%=@hotel.id%>" role="button" data-slide="next" style="margin:0px;padding:0px;">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                  </a>
-                <% end%>
+                </div>
 
               </div>
             </div>
-
-      </p>
-
-      <%if @hotel.location != nil %>
-      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@hotel.location.latitude}%2C#{@hotel.location.longitude}" %>
-      <%end%>
-    </div>
-    <div>
-      <% if can? :update, @hotel %>
-        <hr class="omb_hrOr">
-        <div id="cus_addroom">
-          <h2>ADD A ROOM</h2>
-          <%= render 'rooms/form' %>
-        <% end %>
+          </div>
+        </div>
       </div>
-      <% if can? :update, @hotel %>
-        <div class="col-sm-6" style="padding:20px 5px 50px 0">
-          <%= link_to 'Edit', edit_hotel_path(@hotel), class:"btn btn-lg btn-success btn-block" %>
-        </div>
-        <div class="col-sm-6" style="padding:20px 0 50px 5px">
-          <%= link_to 'Back', hotels_path, class:"btn btn-lg btn-warning btn-block" %>
-        </div>
-      <% else %>
-        <div class="col-sm-12" style="padding:20px 0 50px 5px">
-          <%= link_to 'Back', hotels_path, class:"btn btn-lg btn-warning btn-block" %>
-        </div>
-      <% end %>
     </div>
-  </div>
-</div>
+  
