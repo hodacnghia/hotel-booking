@@ -9,8 +9,16 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18'
+gem 'pg'
 gem 'pg_search'
+
+# deploy gem
+
+gem "capistrano"
+gem "capistrano3-puma"
+gem "capistrano-rails", require: false
+gem "capistrano-bundler", require: false
+gem "capistrano-rvm"
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
