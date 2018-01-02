@@ -36,8 +36,16 @@
                         <%= @hotel.description.html_safe %>
                       </p>
                       <p>
+                        <strong>Phone:</strong>
+                        <%= @hotel.phone %>
+                      </p>
+                      <p>
                         <strong>User:</strong>
                         <%= @hotel.user.name %>
+                      </p>
+                      <p>
+                        <strong>Email:</strong>
+                        <%= @hotel.user.email %>
                       </p>
                       <p>
                                     <div id="shout-carousel<%=@hotel.id%>" class="carousel slide col-lg-12" data-ride="carousel" style="margin:0px;padding:0px">

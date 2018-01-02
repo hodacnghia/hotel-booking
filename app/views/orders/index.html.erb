@@ -25,7 +25,6 @@
                   <td><%= order.room.type.name %></td>
                   <td><%= order.total %></td>
                                 <td class="text-center">
-                  <%= link_to 'Edit', edit_hotel_room_order_path(order.room.hotel_id,order.room_id,order), class:'btn btn-info btn-xs' %>
                   <%= link_to 'Destroy', order, class:"btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %>
                 </td>
             </tr>

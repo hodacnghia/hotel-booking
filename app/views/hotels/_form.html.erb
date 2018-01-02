@@ -44,6 +44,7 @@
      <div class="panel-body">
       <label>City</label><%= collection_select(:hotel, :city_id, City.all, :id, :name, {prompt: true} , class:"form-control") %>
 	    <label>Name</label><%= form.text_field :name, id: :hotel_name, class:"form-control" %>
+      <label>Phone</label><%= form.text_field :phone, id: :hotel_phone, class:"form-control" %>
       <label>Description</label><%= form.text_area :description, id: :hotel_description, class:'form-control ' %>
       <label>Picture</label><%= form.file_field :picture,multiple: true, id: :home_stay_picture, class:"form-control" %>
       <button class="btn btn-lg btn-primary col-sm-6" style="margin-top:20px" type="submit">ADD</button>
