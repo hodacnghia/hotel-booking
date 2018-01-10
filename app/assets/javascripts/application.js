@@ -24,7 +24,7 @@
 //= require_tree .
 
 
-<script type="text/javascript" charset="utf-8">
+{/* <script type="text/javascript" charset="utf-8">
 Gmaps.map.createMarker({Lat: Gmaps.map.userLocation.lat(),
                Lng: Gmaps.map.userLocation.lng(),
                rich_marker: null,
@@ -216,4 +216,4 @@ Gmaps.map.createMarker({Lat: Gmaps.map.userLocation.lat(),
                 return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
             }
 
-        })();
+        })(); */}
