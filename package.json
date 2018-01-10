@@ -1,5 +1,8 @@
 {
   "name": "team1",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "uglify-es": "git+https://github.com/mishoo/UglifyJS2.git#harmony"
+  }
 }
