@@ -11,16 +11,16 @@ class User < ApplicationRecord
   has_many :hotels  ,:dependent => :destroy
   ratyrate_rater
   def assign_role
-    self.role = Role.find_by name_role: "Regular" if self.role.nil?
+    self.role = Role.find_by name: "Regular" if self.role.nil?
   end
   def admin?
-    self.role.name_role == "Admin"
+    self.role.name == "Admin"
   end
   def regular?
-    self.role.name_role == "Regular"
+    self.role.name == "Regular"
   end
   def host?
-    self.role.name_role == "Host"
+    self.role.name == "Host"
   end
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
     data = access_token.info

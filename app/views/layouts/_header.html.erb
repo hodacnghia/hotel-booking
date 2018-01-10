@@ -14,25 +14,26 @@
 						<% if current_user.try(:admin?) %>
 							
               <%= link_to "Admin" , rails_admin_path %>
-							  </li>
+							</li>
 						<%end%>
             <% if current_user.hotels.empty? %>
-													<li>
-
+						<li>
               <%= link_to "Become a host" , new_hotel_path %>
-							            </li>
-
+							</li>
             <% else %>
+						<li>
               <%= link_to "Add a new list" , new_hotel_path %>
-							  <li>
+</li>
+<li>
                   <%= link_to "My Hotels", my_hotel_path %>
-                </li>
+
+            <%end%>
+						                </li>
 
 
  
 
               </ul>
-            <%end%>
           <% else %>
             <%= link_to "Become a host" , new_user_session_path %>
           <%end%>			
