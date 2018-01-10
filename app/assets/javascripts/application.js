@@ -15,7 +15,6 @@
 //= require ckeditor/init
 //= require ratyrate
 //= require rails-ujs
-//= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap.min
 //= require jquery-ui
