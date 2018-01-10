@@ -15,6 +15,7 @@
 //= require ckeditor/init
 //= require ratyrate
 //= require rails-ujs
+//= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap.min
 //= require jquery-ui
@@ -37,7 +38,7 @@ function getDates(startDate, stopDate) {
    }
    return dateArray;
  }
- document.addEventListener("turbolinks:load", function() {
+document.addEventListener("turbolinks:load", function() {
 
 
 
