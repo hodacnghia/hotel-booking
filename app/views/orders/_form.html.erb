@@ -1,7 +1,7 @@
   <%= form_for :order, url: hotel_room_orders_path(@hotel.id,@room.id),method: :POST do |form| %>
 
     <div class="field">
-      <%= form.label :form %>
+      <%= form.label :from %>
         <div class="form-group">
           <div class='input-group date' id='datetimepicker6'>
             <%= form.text_field :form, id: :order_form, class:'form-control', id:'datefrom' %>
