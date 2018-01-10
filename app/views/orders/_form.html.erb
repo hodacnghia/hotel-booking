@@ -3,7 +3,7 @@
     <div class="field">
       <%= form.label :from %>
         <div class="form-group">
-          <div class='input-group date' id='datetimepicker6'>
+          <div class='input-group date' id='datetimepicker6' data-turbolinks="false">
             <%= form.text_field :form, id: :order_form, class:'form-control', id:'datefrom' %>
               <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
@@ -14,7 +14,7 @@
     <div class="field">
       <%= form.label :to %>
         <div class="form-group">
-          <div class='input-group date' id='datetimepicker7'>
+          <div class='input-group date' id='datetimepicker7 data-turbolinks="false"'>
             <%= form.text_field :to, id: :order_to, class:'form-control', id: 'dateto' %>
               <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
