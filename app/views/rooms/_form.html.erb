@@ -1,4 +1,6 @@
-<%= form_with(model: [ @hotel, @hotel.rooms.build]) do |form| %>
+
+<%= form_for :room, url: hotel_rooms_path(@hotel.id),method: :post do |form| %>
+
   <div class="col-sm-5" id="cus_type">
     <p>
       <%= form.label :type_id %><a> : </a>

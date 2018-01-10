@@ -9,10 +9,10 @@
             <td>
             </td>
             <li class="row">
-            <%if hotel.picture.empty?%>
+            <%if hotel.picture.blank?%>
                          <%=  image_tag "no_image_available.jpg" %>
             <%else%>
-             <%=  image_tag hotel.picture[0].url %>
+             <%=  image_tag hotel.picture.url %>
               <%end%>
               <div class="property_details" style="width:100%" >
                 <h1>

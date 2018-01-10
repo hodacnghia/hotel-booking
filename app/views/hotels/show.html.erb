@@ -48,30 +48,18 @@
                         <%= @hotel.user.email %>
                       </p>
                       <p>
-                                    <div id="shout-carousel<%=@hotel.id%>" class="carousel slide col-lg-12" data-ride="carousel" style="margin:0px;padding:0px">
+                                    <div  class=" slide col-lg-12"  style="margin:0px;padding:0px">
                                 <div class="carousel-inner col-lg-4" style="margin:0px;padding:0px">
-            <%if @hotel.picture.empty?%>
+                                    <%if @hotel.picture.blank?%>
                                   <div class="item active col-lg-12" style="margin:0px;padding:0px">
                                     <%=  image_tag "no_image_available.jpg" %>
                                   </div>
                                 <%else%>
                                   <div class="item active col-lg-12" style="margin:0px;padding:0px">
-                                    <%=  image_tag @hotel.picture[0].url %>
+                                    <%=  image_tag @hotel.picture.url %>
                                   </div>
                                 <%end%>
-                                <%y = @hotel.picture.count-1 %>
-                                    <% 1.upto(y) do |x|%>
-                                  <div class="item col-lg-12" style="margin:0px;padding:0px">
-                                        <% x%>
-                                          <%=  image_tag @hotel.picture[x].url %>
-                                  </div>
-                                  <a class="left carousel-control" href="#shout-carousel<%=@hotel.id%>" role="button" data-slide="prev" style="margin:0px;padding:0px">
-                                    <span class="glyphicon glyphicon-chevron-left"></span>
-                                  </a>
-                                  <a class="right carousel-control" href="#shout-carousel<%=@hotel.id%>" role="button" data-slide="next" style="margin:0px;padding:0px;">
-                                    <span class="glyphicon glyphicon-chevron-right"></span>
-                                  </a>
-                                <% end%>
+                                
 
                               </div>
                             </div>

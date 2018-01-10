@@ -3,7 +3,7 @@ class Hotel < ApplicationRecord
   belongs_to :user
   has_many :rooms, dependent: :destroy
   has_one :location
-  mount_uploaders :picture, PictureUploader
+  mount_uploader :picture, PictureUploader
   validate  :picture_size
   validates :name ,:description , presence: true
 

@@ -30,8 +30,8 @@ class RoomsController < ApplicationController
   # POST /rooms.json
   def create
     @hotel = Hotel.find(params[:hotel_id])
-    @room = @hotel.rooms.create(room_params)
-
+    @room = Room.create(room_params)    
+    @room.hotel_id = @hotel.id
 
     respond_to do |format|
       if @room.save
