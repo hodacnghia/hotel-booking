@@ -14,12 +14,6 @@ gem 'pg_search'
 
 # deploy gem
 
-gem "capistrano"
-gem "capistrano3-puma"
-gem "capistrano-rails", require: false
-gem "capistrano-bundler", require: false
-gem "capistrano-rvm"
-
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
