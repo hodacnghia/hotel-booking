@@ -38,7 +38,7 @@ function getDates(startDate, stopDate) {
    }
    return dateArray;
  }
-    $(document).ready(function(){
+    $(document).on('turbolinks:load', function() {
 
 
 
