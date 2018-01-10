@@ -22,6 +22,7 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require_tree .
+//= require cloudinary
 
 
 {/* <script type="text/javascript" charset="utf-8">

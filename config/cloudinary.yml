@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hodacnghia
+  api_key: '469599335175754'
+  api_secret: Vs-49uzhgA3B9wftk48u60kTNss
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hodacnghia
+  api_key: '469599335175754'
+  api_secret: Vs-49uzhgA3B9wftk48u60kTNss
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hodacnghia
+  api_key: '469599335175754'
+  api_secret: Vs-49uzhgA3B9wftk48u60kTNss
+  enhance_image_tag: true
+  static_image_support: false
