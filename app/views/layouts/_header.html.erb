@@ -68,6 +68,8 @@
 		</section>
 </canvas>
 	</section>
+
+	<!--
 	<section class="search">
 		<div class="wrapper">
 			<%= form_tag hotels_path, method: :get do %>
@@ -76,4 +78,45 @@
 		<% end%>
 	</section>
 	</div>
-	<!-- end hero section -->
+	<!-- end hero section
+	-->
+	<section>
+		<div class="container">
+				<div class="row">
+					<div class="col-sm-2 col-xs-6">
+						<div><label>Thành phố</label></div>
+						<div>
+							<select style="width: 100%;">
+								<option>Hồ Chí Minh</option>
+								<option>Hà Nội</option>
+								<option>Huế</option>
+								<option>Đà Lạt</option>
+								<option>Nha Trang</option>
+								<option>Đà Nẵng</option>
+								<option>Hải Phòng</option>
+								<option>Vũng Tàu</option>
+								<option>Tiền Giang</option>
+								<option>Tây Ninh</option>
+								<option>Quy Nhơn</option>
+								<option>Bình Định</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-sm-2 col-xs-6">
+						<div><label>Giá</label></div>
+						<div>
+							<select style="width: 100%;">
+								<option>0 - 200.000</option>
+								<option>200.000 - 300.000</option>
+								<option>300.000 - 400.000</option>
+								<option>Trên 400.000</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-sm-2 col-xs-12" style="color:white">
+						<div class="d-none d-sm-visible" style="visibility: hidden;">Tìm kiếm</div>
+						<button style="background-color: red; height: 100%; width: 100%; border:0; margin-top:5px">Tìm kiếm</button>
+					</div>
+				</div>
+		</div>
+	</section>
