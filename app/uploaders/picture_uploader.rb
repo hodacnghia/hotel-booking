@@ -1,8 +1,7 @@
 class PictureUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
   process resize_to_fill: [350, 300]
-  process :convert => 'png'
-  process :tags => ['post_picture']
+
   
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick

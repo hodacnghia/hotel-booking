@@ -8,7 +8,7 @@
           <tr>
             <td></td>
             <li class="row">
-                         <%if hotel.picture[0] == nil%>
+            <%if hotel.picture.empty?%>
                          <%=  image_tag "no_image_available.jpg" %>
             <%else%>
              <%=  image_tag hotel.picture[0].url %>

@@ -39,10 +39,19 @@
       <%= f.file_field :picture,multiple: true, id: :hotel_picture, class:"form-control", style:"margin-top:20px;" %>
       <button class="btn btn-lg btn-primary col-sm-12" style="margin-top:20px" type="submit">Add File</button><br>
       <%end%>
+      <%if(@hotel.location.nil?)%>
+          <%= form_for :location, url: hotel_locations_path(@hotel.id),method: :post do |form| %>
+  <label>Address</label><%= form.text_field  :address, id: :location_address, class:"form-control" %>
+      <button class="btn btn-lg btn-primary col-sm-12" style="margin-top:20px" type="submit">Add</button>
+          <% end %>
+
+            <% else %>
       <%= form_for :location, url: hotel_location_path(@hotel.id,@hotel.location.id),method: :patch do |form| %>
+      
       <label>Address</label><%= form.text_field  :address, id: :location_address, class:"form-control" %>
       <button class="btn btn-lg btn-primary col-sm-12" style="margin-top:20px" type="submit">Update</button>
       <% end %>
+      <%end%>
       <div class="col-sm-12" style="padding:20px 0 10px 0">
         <%= link_to 'Back', :back, class:"btn btn-lg btn-warning btn-block" %>
       </div>
