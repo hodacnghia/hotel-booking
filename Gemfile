@@ -56,8 +56,9 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 gem 'rails_admin'
 gem 'ckeditor'
 gem 'cloudinary'
-gem 'jquery-ui-rails'
-
+group :assets do
+  gem 'jquery-ui-rails', :git => 'https://github.com/joliss/jquery-ui-rails'
+end
 # Use Capistrano for deployment
 
 #Send mail
