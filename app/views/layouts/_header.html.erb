@@ -16,9 +16,12 @@
               <%= link_to "Admin" , rails_admin_path %>
 							  </li>
 						<%end%>
-							<li>
             <% if current_user.hotels.empty? %>
+													<li>
+
               <%= link_to "Become a host" , new_hotel_path %>
+							            </li>
+
             <% else %>
               <%= link_to "Add a new list" , new_hotel_path %>
 							  <li>
@@ -29,7 +32,6 @@
  
 
               </ul>
-            </li>
             <%end%>
           <% else %>
             <%= link_to "Become a host" , new_user_session_path %>
