@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-r1 = Role.create({name: "Regular", description: "Can read items"})
-r2 = Role.create({name: "Admin", description: "Can perform any CRUD operation on any resource"})
+r1 = Role.create({name_role: "Regular", description_role: "Can read items"})
+r2 = Role.create({name_role: "Admin", description_role: "Can perform any CRUD operation on any resource"})
 
 
 u2 = User.create({name: "Hien", email: "hien@gmail.com", password: "123456", password_confirmation: "123456", role_id: r2.id})
@@ -20,15 +20,15 @@ t3 = Type.create({name: "Deduce", discription: "On higher floor with better qual
 t4 = Type.create({name: "Suite", discription: "Suites are located on high floors, equipped with high-end equipment and special services attached"})
 
 
-c1 = City.create({name: "Hồ Chí Minh", description: "thành phố hiện đại năng động"})
-c2 = City.create({name: "Hà Nội", description: "thành phố hiện đại năng động"})
-c3 = City.create({name: "Huế", description: "thành phố hiện đại năng động"})
-c4 = City.create({name: "Đà Lạt", description: "thành phố hiện đại năng động"})
-c5 = City.create({name: "Nha Trang", description: "thành phố hiện đại năng động"})
-c6 = City.create({name: "Đà Nẵng", description: "thành phố hiện đại năng động"})
-c7 = City.create({name: "Hải Phòng", description: "thành phố hiện đại năng động"})
-c8 = City.create({name: "Vũng Tàu", description: "thành phố hiện đại năng động"})
-c9 = City.create({name: "Tiền Giang", description: "thành phố hiện đại năng động"})
-c10 = City.create({name: "Tây Ninh", description: "thành phố hiện đại năng động"})
-c11 = City.create({name: "Quy Nhơn", description: "thành phố hiện đại năng động"})
-c11 = City.create({name: "Bình Định", description: "thành phố hiện đại năng động"})
+c1 = City.create({name_city: "Hồ Chí Minh", description_city: "thành phố hiện đại năng động"})
+c2 = City.create({name_city: "Hà Nội", description_city: "thành phố hiện đại năng động"})
+c3 = City.create({name_city: "Huế", description_city: "thành phố hiện đại năng động"})
+c4 = City.create({name_city: "Đà Lạt", description_city: "thành phố hiện đại năng động"})
+c5 = City.create({name_city: "Nha Trang", description_city: "thành phố hiện đại năng động"})
+c6 = City.create({name_city: "Đà Nẵng", description_city: "thành phố hiện đại năng động"})
+c7 = City.create({name_city: "Hải Phòng", description_city: "thành phố hiện đại năng động"})
+c8 = City.create({name_city: "Vũng Tàu", description_city: "thành phố hiện đại năng động"})
+c9 = City.create({name_city: "Tiền Giang", description_city: "thành phố hiện đại năng động"})
+c10 = City.create({name_city: "Tây Ninh", description_city: "thành phố hiện đại năng động"})
+c11 = City.create({name_city: "Quy Nhơn", description_city: "thành phố hiện đại năng động"})
+c11 = City.create({name_city: "Bình Định", description_city: "thành phố hiện đại năng động"})

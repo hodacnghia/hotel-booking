@@ -11,30 +11,6 @@
     </div>
   <% end %>
 
-<!-- <div class="field">
-    <%= form.label :city_id %>
-    <%= collection_select(:hotel, :city_id, City.all, :id, :name, {prompt: true}) %>
-
-  </div>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :hotel_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :hotel_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :picture %>
-    <%= form.file_field :picture,multiple: true, id: :home_stay_picture %>
-  </div>
-
-
-  <div class="actions">
-    <%= form.submit %>
-  </div> -->
 
 <div class="container" style="margin-top:50px">
  <div class="row">
@@ -42,7 +18,7 @@
    <div class="panel panel-primary">
     <div class="panel-heading" style="font-size:20px;">New Hotel</div>
      <div class="panel-body">
-      <label>City</label><%= collection_select(:hotel, :city_id, City.all, :id, :name, {prompt: true} , class:"form-control") %>
+      <label>City</label><%= collection_select(:hotel, :city_id, City.all, :id, :name_city, {prompt: true} , class:"form-control") %>
 	    <label>Name</label><%= form.text_field :name, id: :hotel_name, class:"form-control" %>
       <label>Phone</label><%= form.text_field :phone, id: :hotel_phone, class:"form-control" %>
       <label>Description</label><%= form.text_area :description, id: :hotel_description, class:'form-control ' %>

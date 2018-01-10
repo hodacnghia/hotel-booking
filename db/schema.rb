@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 20180102053631) do
   end
 
   create_table "cities", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
+    t.string "name_city"
+    t.string "description_city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20180102053631) do
     t.boolean "status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "picture", default: [], array: true
+    t.string "picture"
     t.bigint "city_id"
     t.integer "phone"
     t.index ["city_id"], name: "index_hotels_on_city_id"
