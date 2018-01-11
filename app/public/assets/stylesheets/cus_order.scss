@@ -1,0 +1,46 @@
+#cus_room {
+  // background-color: #E0E0E0;
+  background-color: white;
+  padding: 10px;
+  margin-left: 40px;
+  margin-top: 41px;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+#show_order {
+  margin-left: 20px;
+  margin-top: 41px;
+}
+
+#add_order {
+  margin: 0px 10px 0 -100px;
+  padding: 0px;
+  padding-left: 120px;
+}
+
+#cus_hotel_name {
+  background-color: #448AFF;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+#cus_order_show {
+  padding: 10px 0 10px 15px;
+  border-radius: 10px;
+  background-color: white;
+  margin: 0  25px 25px 25px;
+  width:20%;
+}
+
+#cus_order_show:hover {
+    box-shadow: 5px 5px rgba(234, 234, 234, 0.9);
+}
+
+#cus_button_back_order {
+   padding:20px 0 50px 5px;
+}

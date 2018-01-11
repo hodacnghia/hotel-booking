@@ -102,7 +102,7 @@ config.action_mailer.default_url_options = {host: "localhost:3000"}
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.public_file_server.enabled = 'assets'.present?
+  config.public_file_server.enabled = 'public'.present?
 
 
 end
